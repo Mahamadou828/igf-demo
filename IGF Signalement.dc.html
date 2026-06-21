@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Great+Vibes&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<style>
+
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;color:#1A1A2E;background:#F5F7FA;}
+a{text-decoration:none;color:inherit;}
+.ms{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;display:inline-block;white-space:nowrap;}
+.lift{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;}
+.lift:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(11,41,66,.13);}
+.np::placeholder{color:#9AA6B2;}
+.fi{width:100%;border:1px solid #D9E0E8;border-radius:6px;padding:12px 14px;font-size:14px;color:#1A1A2E;font-family:inherit;outline:none;background:#fff;}
+.fi:focus{border-color:#0095C9;box-shadow:0 0 0 3px rgba(0,149,201,.12);}
+</style>
+</helmet>
+
+<div data-screen-label="Signalement" style="font-family:'Hanken Grotesk',system-ui,sans-serif;color:#1A1A2E;background:#F5F7FA;min-height:100vh;">
+
+  <!-- HEADER -->
+  <header data-nav="1" style="position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 1px 0 #EEF1F5;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:34px;background:#fff;border-bottom:1px solid #EEF1F5;max-width:1400px;margin:0 auto;">
+      <div style="display:flex;align-items:center;gap:9px;">
+        <img src="assets/armoiries-rdc.png" alt="" style="height:22px;width:auto;display:block;">
+        <span style="font-size:10.5px;letter-spacing:.14em;color:#5A6675;font-weight:600;">RÉPUBLIQUE DÉMOCRATIQUE DU CONGO</span>
+      </div>
+      <div></div>
+    </div>
+    <div style="height:3px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 32px;background:#fff;max-width:1400px;margin:0 auto;">
+      <a href="IGF%20Accueil.dc.html"><img src="assets/igf-logo.png" alt="Inspection Générale des Finances" style="height:50px;width:auto;display:block;"></a>
+      <nav style="display:flex;align-items:center;gap:20px;font-size:13.5px;font-weight:600;color:#1A1A2E;position:relative;">
+        <a href="IGF%20Accueil.dc.html">Accueil</a>
+        <div style="position:relative;">
+          <span onClick="{{onToggleIgf}}" style="display:flex;align-items:center;gap:1px;cursor:pointer;">L'IGF-RDC <span class="ms" style="font-size:17px;color:#9AA6B2;">expand_more</span></span>
+          <sc-if value="{{igfOpen}}" hint-placeholder-val="{{false}}">
+            <div style="position:absolute;top:30px;left:-14px;width:260px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(11,41,66,.16);padding:8px;z-index:60;">
+              <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Présentation de l'institution</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Missions &amp; attributions</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Organisation &amp; structures</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Le Chef de Service</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Cadre légal &amp; réglementaire</a>
+            </div>
+          </sc-if>
+        </div>
+        <div style="position:relative;">
+          <span onClick="{{onToggleAct}}" style="display:flex;align-items:center;gap:1px;cursor:pointer;">Actualités &amp; Médias <span class="ms" style="font-size:17px;color:#9AA6B2;">expand_more</span></span>
+          <sc-if value="{{actOpen}}" hint-placeholder-val="{{false}}">
+            <div style="position:absolute;top:30px;left:-14px;width:240px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(11,41,66,.16);padding:8px;z-index:60;">
+              <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+              <a href="IGF%20Actualites.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Toutes les actualités</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Communiqués officiels</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Médiathèque (vidéos)</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Photothèque</a>
+            </div>
+          </sc-if>
+        </div>
+        <div style="position:relative;">
+          <span onClick="{{onTogglePub}}" style="display:flex;align-items:center;gap:1px;cursor:pointer;">Publications <span class="ms" style="font-size:17px;color:#9AA6B2;">expand_more</span></span>
+          <sc-if value="{{pubOpen}}" hint-placeholder-val="{{false}}">
+            <div style="position:absolute;top:30px;left:-14px;width:240px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(11,41,66,.16);padding:8px;z-index:60;">
+              <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Rapports d'audit</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Études &amp; analyses</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Rapports d'activités</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Textes &amp; lois</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Formulaires à télécharger</a>
+            </div>
+          </sc-if>
+        </div>
+        <a href="IGF%20Cartographie.dc.html">Cartographie</a>
+        <a href="IGF%20Signalement.dc.html" style="color:#0095C9;padding-bottom:3px;border-bottom:2px solid #0095C9;">Signalement</a>
+        <a>Événements</a>
+        <a>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO STRIP -->
+  <section style="background:#0B2942;color:#fff;padding:34px 0;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(600px 300px at 85% 30%,rgba(0,149,201,.25),transparent 60%);"></div>
+    <div style="max-width:1080px;margin:0 auto;padding:0 32px;position:relative;">
+      <div style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:12px;display:flex;align-items:center;gap:7px;"><a href="IGF%20Accueil.dc.html" style="color:#8FD3EC;font-weight:600;">Accueil</a><span class="ms" style="font-size:14px;">chevron_right</span><span>Signalement</span></div>
+      <h1 style="font-size:32px;font-weight:600;margin:0 0 8px;letter-spacing:-.02em;">Signaler un fait à l'IGF</h1>
+      <p style="font-size:14.5px;color:rgba(255,255,255,.8);margin:0;max-width:620px;line-height:1.6;">Corruption, détournement, fraude dans les marchés publics : votre signalement contribue à protéger les deniers publics. Vous pouvez rester totalement anonyme.</p>
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <section style="padding:40px 0 70px;">
+    <div style="max-width:1080px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start;">
+
+      <!-- LEFT REASSURANCE -->
+      <aside style="position:sticky;top:120px;display:flex;flex-direction:column;gap:14px;">
+        <div style="background:#fff;border:1px solid #E8ECF1;border-radius:10px;padding:20px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span class="ms" style="font-size:22px;color:#0B7A3B;">lock</span><span style="font-size:14px;font-weight:700;color:#0B2942;">Confidentialité garantie</span></div>
+          <p style="font-size:12.5px;color:#6B7785;line-height:1.6;margin:0;">Vos données sont traitées de manière strictement confidentielle. Aucune information n'est partagée avec l'entité concernée.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #E8ECF1;border-radius:10px;padding:20px;">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#0095C9;margin-bottom:14px;">COMMENT ÇA MARCHE</div>
+          <div style="display:flex;flex-direction:column;gap:13px;">
+            <div style="display:flex;gap:11px;"><span class="ms" style="font-size:19px;color:#9AA6B2;">edit_note</span><div><div style="font-size:13px;font-weight:700;color:#0B2942;">1. Décrire les faits</div><div style="font-size:11.5px;color:#8A95A2;">En quelques étapes guidées.</div></div></div>
+            <div style="display:flex;gap:11px;"><span class="ms" style="font-size:19px;color:#9AA6B2;">fact_check</span><div><div style="font-size:13px;font-weight:700;color:#0B2942;">2. Analyse de recevabilité</div><div style="font-size:11.5px;color:#8A95A2;">Par les services de l'IGF.</div></div></div>
+            <div style="display:flex;gap:11px;"><span class="ms" style="font-size:19px;color:#9AA6B2;">verified_user</span><div><div style="font-size:13px;font-weight:700;color:#0B2942;">3. Suivi par référence</div><div style="font-size:11.5px;color:#8A95A2;">Un numéro unique vous est remis.</div></div></div>
+          </div>
+        </div>
+        <div style="background:#FCEAE9;border:1px solid #F4C9C6;border-radius:10px;padding:16px 18px;">
+          <div style="font-size:12.5px;font-weight:700;color:#B0271F;margin-bottom:5px;">Urgence ?</div>
+          <div style="font-size:12px;color:#8A4540;line-height:1.5;">Ligne verte IGF : <strong>+243 97 105 96 54</strong></div>
+        </div>
+      </aside>
+
+      <!-- RIGHT: FORM CARD -->
+      <div style="background:#fff;border:1px solid #E8ECF1;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(11,41,66,.06);">
+
+        <sc-if value="{{notSubmitted}}" hint-placeholder-val="{{true}}">
+        <div>
+          <!-- STEPPER -->
+          <div style="display:flex;align-items:center;gap:0;padding:22px 28px;border-bottom:1px solid #EEF1F5;background:#FBFCFD;">
+            <sc-for list="{{steps}}" as="st" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;flex:1;">
+                <div style="display:flex;align-items:center;gap:9px;">
+                  <div style="width:30px;height:30px;border-radius:50%;background:{{st.bg}};color:{{st.fg}};border:2px solid {{st.bd}};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex:none;">{{st.mark}}</div>
+                  <span style="font-size:12.5px;font-weight:700;color:{{st.tc}};white-space:nowrap;">{{st.label}}</span>
+                </div>
+                <div style="flex:1;height:2px;background:{{st.line}};margin:0 12px;min-width:14px;"></div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="padding:30px 32px 34px;">
+            <!-- STEP 1 -->
+            <sc-if value="{{is1}}" hint-placeholder-val="{{true}}">
+            <div>
+              <h2 style="font-size:20px;font-weight:700;color:#0B2942;margin:0 0 6px;">Nature du signalement</h2>
+              <p style="font-size:13.5px;color:#6B7785;margin:0 0 22px;">Sélectionnez le type de fait que vous souhaitez signaler.</p>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px;">
+                <sc-for list="{{types}}" as="t" hint-placeholder-count="5">
+                  <div onClick="{{t.go}}" class="lift" style="border:1.5px solid {{t.bd}};background:{{t.bg}};border-radius:9px;padding:16px;cursor:pointer;display:flex;gap:12px;align-items:flex-start;">
+                    <span class="ms" style="font-size:23px;color:{{t.ic}};">{{t.icon}}</span>
+                    <div><div style="font-size:14px;font-weight:700;color:#0B2942;">{{t.label}}</div><div style="font-size:11.5px;color:#8A95A2;line-height:1.4;margin-top:2px;">{{t.desc}}</div></div>
+                  </div>
+                </sc-for>
+              </div>
+              <sc-if value="{{errType}}" hint-placeholder-val="{{false}}"><div style="font-size:12px;color:#DB3832;margin:4px 0 0;display:flex;align-items:center;gap:5px;"><span class="ms" style="font-size:15px;">error</span>Veuillez sélectionner une nature de signalement.</div></sc-if>
+
+              <div style="margin-top:26px;">
+                <div style="font-size:13.5px;font-weight:700;color:#0B2942;margin-bottom:11px;">Souhaitez-vous vous identifier ?</div>
+                <div style="display:flex;gap:12px;">
+                  <div onClick="{{onAnon}}" class="lift" style="flex:1;border:1.5px solid {{anonBd}};background:{{anonBg}};border-radius:9px;padding:14px 16px;cursor:pointer;display:flex;gap:11px;align-items:center;">
+                    <span class="ms" style="font-size:22px;color:{{anonIc}};">visibility_off</span>
+                    <div><div style="font-size:13.5px;font-weight:700;color:#0B2942;">Rester anonyme</div><div style="font-size:11.5px;color:#8A95A2;">Aucune coordonnée demandée.</div></div>
+                  </div>
+                  <div onClick="{{onIdent}}" class="lift" style="flex:1;border:1.5px solid {{identBd}};background:{{identBg}};border-radius:9px;padding:14px 16px;cursor:pointer;display:flex;gap:11px;align-items:center;">
+                    <span class="ms" style="font-size:22px;color:{{identIc}};">badge</span>
+                    <div><div style="font-size:13.5px;font-weight:700;color:#0B2942;">M'identifier</div><div style="font-size:11.5px;color:#8A95A2;">Pour être tenu informé du suivi.</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </sc-if>
+
+            <!-- STEP 2 -->
+            <sc-if value="{{is2}}" hint-placeholder-val="{{false}}">
+            <div>
+              <h2 style="font-size:20px;font-weight:700;color:#0B2942;margin:0 0 6px;">Description des faits</h2>
+              <p style="font-size:13.5px;color:#6B7785;margin:0 0 22px;">Donnez le plus de précisions possible. Les champs marqués d'un * sont requis.</p>
+              <div style="display:flex;flex-direction:column;gap:18px;">
+                <div>
+                  <label style="font-size:13px;font-weight:600;color:#0B2942;display:block;margin-bottom:7px;">Entité / service concerné *</label>
+                  <input class="fi" value="{{entite}}" onInput="{{onEntite}}" placeholder="Ex. Direction provinciale des recettes — Lubumbashi">
+                  <sc-if value="{{errEntite}}" hint-placeholder-val="{{false}}"><div style="font-size:12px;color:#DB3832;margin-top:5px;display:flex;align-items:center;gap:5px;"><span class="ms" style="font-size:15px;">error</span>Ce champ est requis.</div></sc-if>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                  <div>
+                    <label style="font-size:13px;font-weight:600;color:#0B2942;display:block;margin-bottom:7px;">Province *</label>
+                    <select class="fi" value="{{province}}" onChange="{{onProvince}}">
+                      <option value="">Sélectionner…</option>
+                      <sc-for list="{{provinces}}" as="p" hint-placeholder-count="6"><option value="{{p}}">{{p}}</option></sc-for>
+                    </select>
+                    <sc-if value="{{errProvince}}" hint-placeholder-val="{{false}}"><div style="font-size:12px;color:#DB3832;margin-top:5px;display:flex;align-items:center;gap:5px;"><span class="ms" style="font-size:15px;">error</span>Veuillez choisir une province.</div></sc-if>
+                  </div>
+                  <div>
+                    <label style="font-size:13px;font-weight:600;color:#0B2942;display:block;margin-bottom:7px;">Date des faits</label>
+                    <input class="fi" type="date" value="{{dateFaits}}" onInput="{{onDate}}">
+                  </div>
+                </div>
+                <div>
+                  <label style="font-size:13px;font-weight:600;color:#0B2942;display:block;margin-bottom:7px;">Montant estimé (facultatif)</label>
+                  <input class="fi" value="{{montant}}" onInput="{{onMontant}}" placeholder="Ex. 250 000 USD">
+                </div>
+                <div>
+                  <label style="font-size:13px;font-weight:600;color:#0B2942;display:block;margin-bottom:7px;">Description détaillée *</label>
+                  <textarea class="fi" value="{{desc}}" onInput="{{onDesc}}" rows="5" placeholder="Décrivez les faits : qui, quoi, quand, où, comment…" style="resize:vertical;line-height:1.5;"></textarea>
+                  <div style="display:flex;justify-content:space-between;margin-top:5px;">
+                    <sc-if value="{{errDesc}}" hint-placeholder-val="{{false}}"><span style="font-size:12px;color:#DB3832;display:flex;align-items:center;gap:5px;"><span class="ms" style="font-size:15px;">error</span>Merci de décrire les faits (20 caractères min.).</span></sc-if>
+                    <span style="font-size:11.5px;color:#9AA6B2;margin-left:auto;">{{descLen}} caractères</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </sc-if>
+
+            <!-- STEP 3 -->
+            <sc-if value="{{is3}}" hint-placeholder-val="{{false}}">
+            <div>
+              <h2 style="font-size:20px;font-weight:700;color:#0B2942;margin:0 0 6px;">Pièces &amp; coordonnées</h2>
+              <p style="font-size:13.5px;color:#6B7785;margin:0 0 22px;">Ajoutez des preuves si vous en disposez. Étape facultative pour les pièces.</p>
+              <div style="border:1.5px dashed #C4D0DB;border-radius:10px;padding:28px;text-align:center;background:#FBFCFD;margin-bottom:8px;">
+                <span class="ms" style="font-size:32px;color:#9AA6B2;">cloud_upload</span>
+                <div style="font-size:14px;font-weight:700;color:#0B2942;margin-top:8px;">Glissez vos fichiers ici ou cliquez pour parcourir</div>
+                <div style="font-size:11.5px;color:#9AA6B2;margin-top:4px;">PDF, JPG, PNG — 10 Mo max par fichier</div>
+              </div>
+
+              <sc-if value="{{isIdentifie}}" hint-placeholder-val="{{false}}">
+              <div style="margin-top:22px;border-top:1px solid #EEF1F5;padding-top:22px;">
+                <div style="font-size:13.5px;font-weight:700;color:#0B2942;margin-bottom:14px;">Vos coordonnées</div>
+                <div style="display:flex;flex-direction:column;gap:16px;">
+                  <div>
+                    <label style="font-size:13px;font-weight:600;color:#0B2942;display:block;margin-bottom:7px;">Nom complet</label>
+                    <input class="fi" value="{{nom}}" onInput="{{onNom}}" placeholder="Votre nom">
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                    <div>
+                      <label style="font-size:13px;font-weight:600;color:#0B2942;display:block;margin-bottom:7px;">Adresse e-mail *</label>
+                      <input class="fi" value="{{email}}" onInput="{{onEmail}}" placeholder="vous@exemple.cd">
+                      <sc-if value="{{errEmail}}" hint-placeholder-val="{{false}}"><div style="font-size:12px;color:#DB3832;margin-top:5px;display:flex;align-items:center;gap:5px;"><span class="ms" style="font-size:15px;">error</span>Adresse e-mail invalide.</div></sc-if>
+                    </div>
+                    <div>
+                      <label style="font-size:13px;font-weight:600;color:#0B2942;display:block;margin-bottom:7px;">Téléphone</label>
+                      <input class="fi" value="{{tel}}" onInput="{{onTel}}" placeholder="+243 …">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </sc-if>
+
+              <label style="display:flex;gap:11px;align-items:flex-start;margin-top:22px;cursor:pointer;">
+                <input type="checkbox" checked="{{consent}}" onChange="{{onConsent}}" style="width:18px;height:18px;margin-top:1px;accent-color:#0095C9;flex:none;">
+                <span style="font-size:12.5px;color:#5A6675;line-height:1.5;">Je certifie sur l'honneur l'exactitude des informations fournies et je comprends qu'une dénonciation calomnieuse est passible de sanctions.</span>
+              </label>
+              <sc-if value="{{errConsent}}" hint-placeholder-val="{{false}}"><div style="font-size:12px;color:#DB3832;margin-top:7px;display:flex;align-items:center;gap:5px;"><span class="ms" style="font-size:15px;">error</span>Vous devez accepter cette déclaration pour continuer.</div></sc-if>
+            </div>
+            </sc-if>
+
+            <!-- STEP 4 -->
+            <sc-if value="{{is4}}" hint-placeholder-val="{{false}}">
+            <div>
+              <h2 style="font-size:20px;font-weight:700;color:#0B2942;margin:0 0 6px;">Récapitulatif</h2>
+              <p style="font-size:13.5px;color:#6B7785;margin:0 0 22px;">Vérifiez vos informations avant l'envoi.</p>
+              <div style="border:1px solid #E8ECF1;border-radius:9px;overflow:hidden;">
+                <sc-for list="{{recap}}" as="r" hint-placeholder-count="5">
+                  <div style="display:flex;padding:13px 16px;border-bottom:1px solid #F0F3F6;background:{{r.bg}};">
+                    <div style="width:170px;font-size:12.5px;color:#8A95A2;font-weight:600;flex:none;">{{r.k}}</div>
+                    <div style="font-size:13.5px;color:#1A2A3A;font-weight:600;">{{r.v}}</div>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="display:flex;gap:10px;align-items:flex-start;margin-top:18px;background:#E7F4FA;border:1px solid #C5E5F1;border-radius:9px;padding:14px 16px;">
+                <span class="ms" style="font-size:20px;color:#0095C9;">info</span>
+                <span style="font-size:12.5px;color:#0B5C7E;line-height:1.5;">Après envoi, un numéro de référence unique vous sera communiqué pour suivre l'état de votre signalement.</span>
+              </div>
+            </div>
+            </sc-if>
+
+            <!-- NAV BUTTONS -->
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:30px;padding-top:22px;border-top:1px solid #EEF1F5;">
+              <div onClick="{{onBack}}" style="display:{{backDisp}};align-items:center;gap:7px;color:#5A6675;font-size:13.5px;font-weight:700;cursor:pointer;"><span class="ms" style="font-size:18px;">arrow_back</span>Précédent</div>
+              <div style="margin-left:auto;display:flex;gap:10px;">
+                <sc-if value="{{isLast}}" hint-placeholder-val="{{false}}">
+                  <button onClick="{{onSubmit}}" style="border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;background:#0B7A3B;color:#fff;font-size:14px;font-weight:700;padding:13px 26px;border-radius:5px;font-family:inherit;"><span class="ms" style="font-size:19px;">send</span>Envoyer le signalement</button>
+                </sc-if>
+                <sc-if value="{{notLast}}" hint-placeholder-val="{{true}}">
+                  <button onClick="{{onNext}}" style="border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;background:#0095C9;color:#fff;font-size:14px;font-weight:700;padding:13px 26px;border-radius:5px;font-family:inherit;">Continuer<span class="ms" style="font-size:19px;">arrow_forward</span></button>
+                </sc-if>
+              </div>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- CONFIRMATION -->
+        <sc-if value="{{submitted}}" hint-placeholder-val="{{false}}">
+        <div style="padding:54px 40px;text-align:center;">
+          <div style="width:74px;height:74px;border-radius:50%;background:#E4F6EC;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;"><span class="ms" style="font-size:40px;color:#0B7A3B;">check_circle</span></div>
+          <h2 style="font-size:25px;font-weight:700;color:#0B2942;margin:0 0 10px;">Signalement transmis à l'IGF</h2>
+          <p style="font-size:14px;color:#6B7785;margin:0 auto 26px;max-width:440px;line-height:1.6;">Merci. Votre signalement a bien été enregistré et sera examiné par les services compétents de l'Inspection Générale des Finances.</p>
+          <div style="display:inline-block;background:#0B2942;color:#fff;border-radius:10px;padding:18px 30px;margin-bottom:26px;">
+            <div style="font-size:11px;letter-spacing:.12em;color:#8FD3EC;font-weight:700;margin-bottom:6px;">VOTRE NUMÉRO DE RÉFÉRENCE</div>
+            <div style="font-size:26px;font-weight:800;font-family:'Hanken Grotesk',monospace;letter-spacing:.04em;">{{ref}}</div>
+          </div>
+          <p style="font-size:12.5px;color:#8A95A2;margin:0 auto 28px;max-width:420px;line-height:1.6;">Conservez ce numéro : il vous permettra de suivre l'avancement de votre dossier en toute confidentialité.</p>
+          <div style="display:flex;gap:12px;justify-content:center;">
+            <a href="IGF%20Accueil.dc.html" style="display:inline-flex;align-items:center;gap:8px;background:#0095C9;color:#fff;font-size:14px;font-weight:700;padding:13px 24px;border-radius:5px;">Retour à l'accueil</a>
+            <button onClick="{{onReset}}" style="border:1.5px solid #D9E0E8;background:#fff;cursor:pointer;color:#0B2942;font-size:14px;font-weight:700;padding:13px 24px;border-radius:5px;font-family:inherit;">Nouveau signalement</button>
+          </div>
+        </div>
+        </sc-if>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0B2942;color:#fff;">
+    <div style="height:4px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+    <div style="max-width:1180px;margin:0 auto;padding:40px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;">
+      <img src="assets/igf-logo.png" alt="IGF" style="height:46px;width:auto;display:block;filter:brightness(0) invert(1);">
+      <span style="font-size:12px;color:rgba(255,255,255,.6);">© 2026 Inspection Générale des Finances — République Démocratique du Congo.</span>
+      <div style="width:30px;height:3px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { step:1, type:'', mode:'anonyme', entite:'', province:'', dateFaits:'', montant:'', desc:'', nom:'', email:'', tel:'', consent:false, submitted:false, ref:'', err:{}, menu:null };
+
+  set(k,v){ this.setState({[k]:v}); }
+  componentDidMount(){ this._doc=(e)=>{ if(!e.target.closest('[data-nav]')) this.setState({menu:null}); }; document.addEventListener('click',this._doc); }
+  componentWillUnmount(){ document.removeEventListener('click',this._doc); }
+  toggle(k){ this.setState(s=>({menu:s.menu===k?null:k})); }
+
+  validate(step){
+    const e = {};
+    if(step===1){ if(!this.state.type) e.type=1; }
+    if(step===2){ if(!this.state.entite.trim()) e.entite=1; if(!this.state.province) e.province=1; if((this.state.desc||'').trim().length<20) e.desc=1; }
+    if(step===3){ if(!this.state.consent) e.consent=1; if(this.state.mode==='identifie' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(this.state.email)) e.email=1; }
+    return e;
+  }
+  next(){
+    const e = this.validate(this.state.step);
+    if(Object.keys(e).length){ this.setState({err:e}); return; }
+    this.setState({err:{}, step:Math.min(4,this.state.step+1)});
+  }
+  back(){ this.setState({err:{}, step:Math.max(1,this.state.step-1)}); }
+  submit(){
+    const r = 'SIG-2026-' + Math.floor(10000+Math.random()*89999);
+    this.setState({submitted:true, ref:r});
+  }
+  reset(){ this.setState({ step:1, type:'', mode:'anonyme', entite:'', province:'', dateFaits:'', montant:'', desc:'', nom:'', email:'', tel:'', consent:false, submitted:false, ref:'', err:{} }); }
+
+  renderVals(){
+    const step = this.state.step, err = this.state.err;
+    const stepDefs = [{n:1,label:'Nature'},{n:2,label:'Les faits'},{n:3,label:'Pièces & contact'},{n:4,label:'Récapitulatif'}];
+    const steps = stepDefs.map((s,i)=>{
+      const done = s.n<step, cur = s.n===step;
+      return { label:s.label, mark: done?'✓':String(s.n),
+        bg: done?'#0095C9':(cur?'#fff':'#fff'),
+        fg: done?'#fff':(cur?'#0095C9':'#9AA6B2'),
+        bd: done?'#0095C9':(cur?'#0095C9':'#D9E0E8'),
+        tc: (done||cur)?'#0B2942':'#9AA6B2',
+        line: s.n<step?'#0095C9':'#E4E8EE' };
+    });
+
+    const typeDefs = [
+      {k:'corruption', label:'Corruption', desc:'Pots-de-vin, sollicitations', icon:'paid'},
+      {k:'detournement', label:'Détournement de fonds', desc:'Deniers publics détournés', icon:'account_balance_wallet'},
+      {k:'marches', label:'Fraude — marchés publics', desc:'Surfacturation, favoritisme', icon:'gavel'},
+      {k:'conflit', label:'Conflit d\u2019intérêts', desc:'Intérêts personnels en jeu', icon:'groups'},
+      {k:'autre', label:'Autre irrégularité', desc:'Tout autre fait de gestion', icon:'more_horiz'}
+    ];
+    const types = typeDefs.map(t=>({ label:t.label, desc:t.desc, icon:t.icon, go:()=>this.setState({type:t.k}),
+      bd:this.state.type===t.k?'#0095C9':'#E4E8EE', bg:this.state.type===t.k?'#F2FAFD':'#fff', ic:this.state.type===t.k?'#0095C9':'#9AA6B2' }));
+    const typeLabel = (typeDefs.find(t=>t.k===this.state.type)||{}).label || '—';
+
+    const provinces = ['Kinshasa','Haut-Katanga','Lualaba','Nord-Kivu','Sud-Kivu','Kongo-Central','Tshopo','Kasaï','Kasaï-Central','Ituri','Tanganyika','Équateur'];
+
+    const recap = [
+      {k:'Nature', v:typeLabel},
+      {k:'Identité', v:this.state.mode==='identifie'?'Identifié':'Anonyme'},
+      {k:'Entité concernée', v:this.state.entite||'—'},
+      {k:'Province', v:this.state.province||'—'},
+      {k:'Date des faits', v:this.state.dateFaits||'Non précisée'},
+      {k:'Montant estimé', v:this.state.montant||'Non précisé'},
+      {k:'Description', v:(this.state.desc||'—').slice(0,90)+((this.state.desc||'').length>90?'…':'')}
+    ].map((r,i)=>({...r, bg:i%2?'#FBFCFD':'#fff'}));
+
+    return {
+      igfOpen:this.state.menu==='igf', actOpen:this.state.menu==='act', pubOpen:this.state.menu==='pub',
+      onToggleIgf:(e)=>{e.stopPropagation();this.toggle('igf');}, onToggleAct:(e)=>{e.stopPropagation();this.toggle('act');}, onTogglePub:(e)=>{e.stopPropagation();this.toggle('pub');},
+      notSubmitted:!this.state.submitted, submitted:this.state.submitted, ref:this.state.ref,
+      steps,
+      is1:step===1, is2:step===2, is3:step===3, is4:step===4,
+      isLast:step===4, notLast:step!==4,
+      backDisp: step>1?'flex':'none',
+      onNext:()=>this.next(), onBack:()=>this.back(), onSubmit:()=>this.submit(), onReset:()=>this.reset(),
+      types, errType:!!err.type,
+      mode:this.state.mode,
+      onAnon:()=>this.setState({mode:'anonyme'}), onIdent:()=>this.setState({mode:'identifie'}),
+      anonBd:this.state.mode==='anonyme'?'#0095C9':'#E4E8EE', anonBg:this.state.mode==='anonyme'?'#F2FAFD':'#fff', anonIc:this.state.mode==='anonyme'?'#0095C9':'#9AA6B2',
+      identBd:this.state.mode==='identifie'?'#0095C9':'#E4E8EE', identBg:this.state.mode==='identifie'?'#F2FAFD':'#fff', identIc:this.state.mode==='identifie'?'#0095C9':'#9AA6B2',
+      entite:this.state.entite, onEntite:(e)=>this.set('entite',e.target.value), errEntite:!!err.entite,
+      province:this.state.province, onProvince:(e)=>this.set('province',e.target.value), errProvince:!!err.province, provinces,
+      dateFaits:this.state.dateFaits, onDate:(e)=>this.set('dateFaits',e.target.value),
+      montant:this.state.montant, onMontant:(e)=>this.set('montant',e.target.value),
+      desc:this.state.desc, onDesc:(e)=>this.set('desc',e.target.value), errDesc:!!err.desc, descLen:(this.state.desc||'').length,
+      isIdentifie:this.state.mode==='identifie',
+      nom:this.state.nom, onNom:(e)=>this.set('nom',e.target.value),
+      email:this.state.email, onEmail:(e)=>this.set('email',e.target.value), errEmail:!!err.email,
+      tel:this.state.tel, onTel:(e)=>this.set('tel',e.target.value),
+      consent:this.state.consent, onConsent:(e)=>this.set('consent',e.target.checked), errConsent:!!err.consent,
+      recap
+    };
+  }
+}
+</script>
+</body>
+</html>

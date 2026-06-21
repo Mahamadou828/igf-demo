@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#0B2942">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0B2942"/>
+    <rect x="0" y="360" width="1200" height="14" fill="#0095C9"/>
+    <rect x="400" y="360" width="400" height="14" fill="#FFED00"/>
+    <rect x="800" y="360" width="400" height="14" fill="#DB3832"/>
+    <rect x="470" y="250" width="260" height="60" rx="6" fill="#ffffff"/>
+    <text x="600" y="293" font-family="Georgia, serif" font-size="40" font-weight="700" fill="#0B2942" text-anchor="middle">IGF</text>
+    <text x="600" y="470" font-family="system-ui, sans-serif" font-size="34" font-weight="700" fill="#8FD3EC" letter-spacing="6" text-anchor="middle">ACTUALITÉS</text>
+    <text x="600" y="520" font-family="system-ui, sans-serif" font-size="20" fill="#9FB3C4" letter-spacing="3" text-anchor="middle">INSPECTION GÉNÉRALE DES FINANCES · RDC</text>
+  </svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Great+Vibes&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<style>
+
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;color:#1A1A2E;background:#fff;}
+a{text-decoration:none;color:inherit;}
+.ms{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;display:inline-block;white-space:nowrap;}
+.lift{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;}
+.lift:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(11,41,66,.13);}
+.np::placeholder{color:#9AA6B2;}
+</style>
+</helmet>
+
+<div data-screen-label="Actualités" style="font-family:'Hanken Grotesk',system-ui,sans-serif;color:#1A1A2E;background:#fff;min-height:100vh;">
+
+  <!-- HEADER -->
+  <header data-nav="1" style="position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 1px 0 #EEF1F5;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:34px;background:#fff;border-bottom:1px solid #EEF1F5;max-width:1400px;margin:0 auto;">
+      <div style="display:flex;align-items:center;gap:9px;">
+        <img src="assets/armoiries-rdc.png" alt="" style="height:22px;width:auto;display:block;">
+        <span style="font-size:10.5px;letter-spacing:.14em;color:#5A6675;font-weight:600;">RÉPUBLIQUE DÉMOCRATIQUE DU CONGO</span>
+      </div>
+      <div></div>
+    </div>
+    <div style="height:3px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 32px;background:#fff;max-width:1400px;margin:0 auto;">
+      <a href="IGF%20Accueil.dc.html"><img src="assets/igf-logo.png" alt="Inspection Générale des Finances" style="height:50px;width:auto;display:block;"></a>
+      <nav style="display:flex;align-items:center;gap:20px;font-size:13.5px;font-weight:600;color:#1A1A2E;position:relative;">
+        <a href="IGF%20Accueil.dc.html">Accueil</a>
+        <div style="position:relative;">
+          <span onClick="{{onToggleIgf}}" style="display:flex;align-items:center;gap:1px;cursor:pointer;">L'IGF-RDC <span class="ms" style="font-size:17px;color:#9AA6B2;">expand_more</span></span>
+          <sc-if value="{{igfOpen}}" hint-placeholder-val="{{false}}">
+            <div style="position:absolute;top:30px;left:-14px;width:260px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(11,41,66,.16);padding:8px;z-index:60;">
+              <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Présentation de l'institution</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Missions &amp; attributions</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Organisation &amp; structures</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Le Chef de Service</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Cadre légal &amp; réglementaire</a>
+            </div>
+          </sc-if>
+        </div>
+        <div style="position:relative;">
+          <span onClick="{{onToggleAct}}" style="display:flex;align-items:center;gap:1px;cursor:pointer;color:#0095C9;">Actualités &amp; Médias <span class="ms" style="font-size:17px;color:#0095C9;">expand_more</span></span>
+          <sc-if value="{{actOpen}}" hint-placeholder-val="{{false}}">
+            <div style="position:absolute;top:30px;left:-14px;width:240px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(11,41,66,.16);padding:8px;z-index:60;">
+              <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+              <a href="IGF%20Actualites.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Toutes les actualités</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Communiqués officiels</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Médiathèque (vidéos)</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Photothèque</a>
+            </div>
+          </sc-if>
+        </div>
+        <div style="position:relative;">
+          <span onClick="{{onTogglePub}}" style="display:flex;align-items:center;gap:1px;cursor:pointer;">Publications <span class="ms" style="font-size:17px;color:#9AA6B2;">expand_more</span></span>
+          <sc-if value="{{pubOpen}}" hint-placeholder-val="{{false}}">
+            <div style="position:absolute;top:30px;left:-14px;width:240px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(11,41,66,.16);padding:8px;z-index:60;">
+              <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Rapports d'audit</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Études &amp; analyses</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Rapports d'activités</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Textes &amp; lois</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Formulaires à télécharger</a>
+            </div>
+          </sc-if>
+        </div>
+        <a href="IGF%20Cartographie.dc.html">Cartographie</a>
+        <a href="IGF%20Signalement.dc.html">Signalement</a>
+        <a>Événements</a>
+        <a>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div style="background:#F5F7FA;border-bottom:1px solid #E8ECF1;">
+    <div style="max-width:1180px;margin:0 auto;padding:11px 32px;font-size:12.5px;color:#8A95A2;display:flex;align-items:center;gap:7px;">
+      <a href="IGF%20Accueil.dc.html" style="color:#0095C9;font-weight:600;">Accueil</a>
+      <span class="ms" style="font-size:15px;">chevron_right</span>
+      <span>Actualités &amp; Médias</span>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section style="background:#fff;padding:40px 0 26px;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 32px;">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;">
+        <div style="width:26px;height:3px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+        <span style="font-size:11.5px;letter-spacing:.16em;color:#0095C9;font-weight:700;">ACTUALITÉS &amp; MÉDIAS</span>
+      </div>
+      <h1 style="font-size:36px;font-weight:600;color:#0B2942;margin:0 0 10px;letter-spacing:-.02em;">Toute l'actualité de l'IGF</h1>
+      <p style="font-size:15px;color:#5A6675;margin:0;max-width:620px;line-height:1.6;">Communiqués, missions de contrôle, formations et vie de l'institution.</p>
+    </div>
+  </section>
+
+  <!-- TOOLBAR -->
+  <section style="background:#fff;padding:0 0 10px;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;">
+      <div style="display:flex;gap:9px;flex-wrap:wrap;">
+        <sc-for list="{{cats}}" as="c" hint-placeholder-count="5">
+          <span onClick="{{c.go}}" style="font-size:12.5px;font-weight:600;padding:8px 16px;border-radius:30px;cursor:pointer;background:{{c.bg}};color:{{c.fg}};border:1px solid {{c.bd}};">{{c.label}}</span>
+        </sc-for>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;background:#F5F7FA;border:1px solid #E4E8EE;border-radius:6px;padding:9px 14px;width:280px;">
+        <span class="ms" style="font-size:19px;color:#9AA6B2;">search</span>
+        <input class="np" value="{{q}}" onInput="{{onSearch}}" placeholder="Rechercher une actualité…" style="border:none;outline:none;background:transparent;font-size:13.5px;color:#1A1A2E;font-family:inherit;width:100%;">
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section style="background:#fff;padding:22px 0 70px;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 32px;">
+      <div style="font-size:12.5px;color:#8A95A2;margin-bottom:18px;">{{count}} résultat(s)</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <sc-for list="{{articles}}" as="n" hint-placeholder-count="6">
+          <a class="lift" style="background:#fff;border:1px solid #E8ECF1;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;">
+            <div style="position:relative;height:170px;background:repeating-linear-gradient(135deg,#EEF1F5 0 15px,#E4E8EE 15px 30px);">
+              <span style="position:absolute;top:12px;left:12px;font-size:10.5px;font-weight:700;letter-spacing:.04em;color:#fff;background:#0095C9;padding:4px 9px;border-radius:3px;">{{n.cat}}</span>
+              <span style="position:absolute;right:10px;bottom:9px;font-family:'Hanken Grotesk',monospace;font-size:10px;color:#9AA6B2;">// {{n.img}}</span>
+            </div>
+            <div style="padding:17px 17px 19px;display:flex;flex-direction:column;flex:1;">
+              <span style="font-size:11.5px;color:#8A95A2;margin-bottom:8px;">{{n.date}}</span>
+              <h3 style="font-size:16px;font-weight:700;color:#0B2942;line-height:1.32;margin:0 0 9px;">{{n.title}}</h3>
+              <p style="font-size:13px;color:#6B7785;line-height:1.55;margin:0 0 14px;">{{n.excerpt}}</p>
+              <span style="margin-top:auto;display:inline-flex;align-items:center;gap:6px;color:#0095C9;font-size:13px;font-weight:700;">Lire la suite <span class="ms" style="font-size:17px;">arrow_forward</span></span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+      <sc-if value="{{empty}}" hint-placeholder-val="{{false}}">
+        <div style="text-align:center;padding:60px 0;color:#8A95A2;font-size:14px;">Aucune actualité ne correspond à votre recherche.</div>
+      </sc-if>
+      <!-- PAGINATION -->
+      <sc-if value="{{showPager}}" hint-placeholder-val="{{true}}">
+        <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:38px;">
+          <div onClick="{{onPrev}}" style="width:38px;height:38px;border-radius:6px;border:1px solid #E4E8EE;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#5A6675;"><span class="ms" style="font-size:19px;">chevron_left</span></div>
+          <sc-for list="{{pages}}" as="p" hint-placeholder-count="3">
+            <div onClick="{{p.go}}" style="min-width:38px;height:38px;padding:0 6px;border-radius:6px;border:1px solid {{p.bd}};background:{{p.bg}};color:{{p.fg}};font-size:13.5px;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:pointer;">{{p.n}}</div>
+          </sc-for>
+          <div onClick="{{onNext}}" style="width:38px;height:38px;border-radius:6px;border:1px solid #E4E8EE;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#5A6675;"><span class="ms" style="font-size:19px;">chevron_right</span></div>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0B2942;color:#fff;">
+    <div style="height:4px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+    <div style="max-width:1180px;margin:0 auto;padding:50px 32px 36px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;">
+      <div>
+        <img src="assets/igf-logo.png" alt="IGF" style="height:54px;width:auto;display:block;filter:brightness(0) invert(1);margin-bottom:18px;">
+        <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.72);margin:0;">Institution supérieure de contrôle des finances publiques de la République Démocratique du Congo.</p>
+      </div>
+      <div>
+        <div style="font-size:12.5px;font-weight:700;letter-spacing:.08em;color:#fff;margin-bottom:16px;">ACCÈS RAPIDE</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;color:rgba(255,255,255,.72);">
+          <a href="IGF%20Accueil.dc.html">Accueil</a><a href="IGF%20Actualites.dc.html">Actualités &amp; Médias</a><a href="IGF%20Cartographie.dc.html">Cartographie</a><a href="IGF%20Signalement.dc.html">Signalement</a><a>Contact</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:12.5px;font-weight:700;letter-spacing:.08em;color:#fff;margin-bottom:16px;">LIENS UTILES</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;color:rgba(255,255,255,.72);">
+          <a>Présidence de la République</a><a>Gouvernement</a><a>Ministères</a><a>Documentation</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:12.5px;font-weight:700;letter-spacing:.08em;color:#fff;margin-bottom:16px;">CONTACT</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:13px;color:rgba(255,255,255,.72);">
+          <span style="display:flex;gap:9px;align-items:flex-start;"><span class="ms" style="font-size:17px;color:#8FD3EC;">place</span>30, Avenue des Forces Armées, Kinshasa/Gombe</span>
+          <span style="display:flex;gap:9px;align-items:center;"><span class="ms" style="font-size:17px;color:#8FD3EC;">call</span>+243 97 105 96 54</span>
+          <span style="display:flex;gap:9px;align-items:center;"><span class="ms" style="font-size:17px;color:#8FD3EC;">mail</span>contact@igf.gouv.cd</span>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.1);">
+      <div style="max-width:1180px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <span style="font-size:12px;color:rgba(255,255,255,.6);">© 2026 Inspection Générale des Finances — République Démocratique du Congo.</span>
+        <div style="display:flex;align-items:center;gap:18px;font-size:12px;color:rgba(255,255,255,.6);">
+          <a>Mentions légales</a><a>Plan du site</a>
+          <div style="width:30px;height:3px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { menu:null, cat:'Tous', q:'', page:1 };
+  componentDidMount(){
+    this._doc = (e)=>{ if(!e.target.closest('[data-nav]')) this.setState({menu:null}); };
+    document.addEventListener('click', this._doc);
+  }
+  componentWillUnmount(){ document.removeEventListener('click', this._doc); }
+  toggle(k){ this.setState(s=>({menu:s.menu===k?null:k})); }
+
+  renderVals(){
+    const all = [
+      {cat:'Contrôle', date:'13 juin 2026', title:'Contrôle systémique : transformation de la gestion publique', excerpt:"L'IGF présente sa nouvelle doctrine de contrôle lors du séminaire national.", img:'séminaire'},
+      {cat:'Formation', date:'13 juin 2026', title:'4ᵉ jour du séminaire IGF — Médias et société', excerpt:'Journée consacrée au rôle des médias dans la redevabilité publique.', img:'atelier'},
+      {cat:'Organisation', date:'09 juin 2026', title:'Plan stratégique triennal 2026–2028 dévoilé', excerpt:"Une feuille de route ambitieuse pour moderniser l'institution.", img:'plénière'},
+      {cat:'Contrôle', date:'03 juin 2026', title:'Clôture de la première vague de missions de contrôle', excerpt:'Bilan des opérations menées sur le premier semestre 2026.', img:'mission'},
+      {cat:'Partenariats', date:'14 avr. 2026', title:"L'IGF installe l'Unité du COPIREP à Bukavu-Sud", excerpt:'Renforcement des capacités de contrôle dans la région du Sud-Kivu.', img:'cérémonie'},
+      {cat:'Formation', date:'10 avr. 2026', title:'Première formation technique des nouveaux inspecteurs', excerpt:"Un programme intensif dédié aux méthodes d'audit modernes.", img:'formation'},
+      {cat:'Organisation', date:'29 mars 2026', title:'Mise en place du Conseil de coordination des missions', excerpt:"Une structure pour améliorer l'efficacité des contrôles.", img:'réunion'},
+      {cat:'Partenariats', date:'02 avr. 2026', title:"Atelier de restitution avec l'Institut Gandois", excerpt:'Résultats des travaux sur le renforcement institutionnel.', img:'atelier'},
+      {cat:'Contrôle', date:'28 mars 2026', title:'Descente de contrôle dans les régies financières', excerpt:'Vérification de la conformité des recettes mobilisées.', img:'terrain'},
+      {cat:'Organisation', date:'20 mars 2026', title:"Le Chef de Service à la rencontre des unités opérationnelles", excerpt:"Tournée de supervision des bureaux régionaux de l'IGF.", img:'visite'},
+      {cat:'Formation', date:'12 mars 2026', title:"Lancement du cycle de certification des inspecteurs", excerpt:'Un dispositif pour professionnaliser le contrôle financier.', img:'formation'},
+      {cat:'Partenariats', date:'05 mars 2026', title:'Accord de coopération avec une institution sœur', excerpt:"Échange de bonnes pratiques en matière d'audit public.", img:'signature'},
+      {cat:'Contrôle', date:'26 févr. 2026', title:'Publication du rapport sur la gestion des primes', excerpt:'Recommandations pour un meilleur encadrement des dépenses.', img:'rapport'},
+      {cat:'Organisation', date:'18 févr. 2026', title:'Nouvelle organisation interne des brigades', excerpt:"Réorganisation pour gagner en réactivité sur le terrain.", img:'bureau'},
+      {cat:'Formation', date:'09 févr. 2026', title:'Séminaire sur l\u2019audit fondé sur les risques', excerpt:'Montée en compétence des équipes de contrôle.', img:'séminaire'}
+    ];
+    const catList = ['Tous','Contrôle','Formation','Organisation','Partenariats'];
+    const cats = catList.map(c=>({ label:c, go:()=>this.setState({cat:c,page:1}),
+      bg:this.state.cat===c?'#0095C9':'#fff', fg:this.state.cat===c?'#fff':'#5A6675', bd:this.state.cat===c?'#0095C9':'#E0E5EB' }));
+
+    const q = (this.state.q||'').toLowerCase();
+    let filtered = all.filter(n=> (this.state.cat==='Tous'||n.cat===this.state.cat) && (q===''|| (n.title+n.excerpt).toLowerCase().includes(q)) );
+    const perPage = 6;
+    const pageCount = Math.max(1, Math.ceil(filtered.length/perPage));
+    const page = Math.min(this.state.page, pageCount);
+    const articles = filtered.slice((page-1)*perPage, page*perPage);
+    const pages = Array.from({length:pageCount}, (_,i)=>i+1).map(n=>({ n, go:()=>this.setState({page:n}),
+      bg:n===page?'#0095C9':'#fff', fg:n===page?'#fff':'#5A6675', bd:n===page?'#0095C9':'#E4E8EE' }));
+
+    return {
+      igfOpen:this.state.menu==='igf', actOpen:this.state.menu==='act', pubOpen:this.state.menu==='pub',
+      onToggleIgf:(e)=>{e.stopPropagation();this.toggle('igf');},
+      onToggleAct:(e)=>{e.stopPropagation();this.toggle('act');},
+      onTogglePub:(e)=>{e.stopPropagation();this.toggle('pub');},
+      cats, articles, count:filtered.length, empty:filtered.length===0,
+      q:this.state.q, onSearch:(e)=>this.setState({q:e.target.value,page:1}),
+      pages, showPager:pageCount>1,
+      onPrev:()=>this.setState(s=>({page:Math.max(1,s.page-1)})),
+      onNext:()=>this.setState(s=>({page:Math.min(pageCount,s.page+1)}))
+    };
+  }
+}
+</script>
+</body>
+</html>

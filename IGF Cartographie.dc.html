@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Great+Vibes&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<style>
+
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;color:#1A1A2E;background:#fff;}
+a{text-decoration:none;color:inherit;}
+.ms{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;display:inline-block;white-space:nowrap;}
+.lift{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;}
+.lift:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(11,41,66,.12);}
+.pin{transition:transform .15s ease;}
+.pin:hover{transform:translate(-50%,-50%) scale(1.25);}
+</style>
+</helmet>
+
+<div data-screen-label="Cartographie" style="font-family:'Hanken Grotesk',system-ui,sans-serif;color:#1A1A2E;background:#fff;min-height:100vh;">
+
+  <!-- HEADER -->
+  <header data-nav="1" style="position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 1px 0 #EEF1F5;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:34px;background:#fff;border-bottom:1px solid #EEF1F5;max-width:1400px;margin:0 auto;">
+      <div style="display:flex;align-items:center;gap:9px;">
+        <img src="assets/armoiries-rdc.png" alt="" style="height:22px;width:auto;display:block;">
+        <span style="font-size:10.5px;letter-spacing:.14em;color:#5A6675;font-weight:600;">RÉPUBLIQUE DÉMOCRATIQUE DU CONGO</span>
+      </div>
+      <div></div>
+    </div>
+    <div style="height:3px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 32px;background:#fff;max-width:1400px;margin:0 auto;">
+      <a href="IGF%20Accueil.dc.html"><img src="assets/igf-logo.png" alt="Inspection Générale des Finances" style="height:50px;width:auto;display:block;"></a>
+      <nav style="display:flex;align-items:center;gap:20px;font-size:13.5px;font-weight:600;color:#1A1A2E;position:relative;">
+        <a href="IGF%20Accueil.dc.html">Accueil</a>
+        <div style="position:relative;">
+          <span onClick="{{onToggleIgf}}" style="display:flex;align-items:center;gap:1px;cursor:pointer;">L'IGF-RDC <span class="ms" style="font-size:17px;color:#9AA6B2;">expand_more</span></span>
+          <sc-if value="{{igfOpen}}" hint-placeholder-val="{{false}}">
+            <div style="position:absolute;top:30px;left:-14px;width:260px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(11,41,66,.16);padding:8px;z-index:60;">
+              <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Présentation de l'institution</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Missions &amp; attributions</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Organisation &amp; structures</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Le Chef de Service</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Cadre légal &amp; réglementaire</a>
+            </div>
+          </sc-if>
+        </div>
+        <div style="position:relative;">
+          <span onClick="{{onToggleAct}}" style="display:flex;align-items:center;gap:1px;cursor:pointer;">Actualités &amp; Médias <span class="ms" style="font-size:17px;color:#9AA6B2;">expand_more</span></span>
+          <sc-if value="{{actOpen}}" hint-placeholder-val="{{false}}">
+            <div style="position:absolute;top:30px;left:-14px;width:240px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(11,41,66,.16);padding:8px;z-index:60;">
+              <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+              <a href="IGF%20Actualites.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Toutes les actualités</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Communiqués officiels</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Médiathèque (vidéos)</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Photothèque</a>
+            </div>
+          </sc-if>
+        </div>
+        <div style="position:relative;">
+          <span onClick="{{onTogglePub}}" style="display:flex;align-items:center;gap:1px;cursor:pointer;">Publications <span class="ms" style="font-size:17px;color:#9AA6B2;">expand_more</span></span>
+          <sc-if value="{{pubOpen}}" hint-placeholder-val="{{false}}">
+            <div style="position:absolute;top:30px;left:-14px;width:240px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(11,41,66,.16);padding:8px;z-index:60;">
+              <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Rapports d'audit</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Études &amp; analyses</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Rapports d'activités</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Textes &amp; lois</a>
+              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Formulaires à télécharger</a>
+            </div>
+          </sc-if>
+        </div>
+        <a href="IGF%20Cartographie.dc.html" style="color:#0095C9;padding-bottom:3px;border-bottom:2px solid #0095C9;">Cartographie</a>
+        <a href="IGF%20Signalement.dc.html">Signalement</a>
+        <a>Événements</a>
+        <a>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section style="background:#F5F7FA;border-bottom:1px solid #E8ECF1;padding:28px 0;">
+    <div style="max-width:1300px;margin:0 auto;padding:0 32px;">
+      <div style="font-size:12.5px;color:#8A95A2;margin-bottom:11px;display:flex;align-items:center;gap:7px;"><a href="IGF%20Accueil.dc.html" style="color:#0095C9;font-weight:600;">Accueil</a><span class="ms" style="font-size:15px;">chevron_right</span><span>Cartographie</span></div>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+        <div>
+          <h1 style="font-size:32px;font-weight:600;color:#0B2942;margin:0 0 7px;letter-spacing:-.02em;">Cartographie des entités assujetties</h1>
+          <p style="font-size:14.5px;color:#5A6675;margin:0;max-width:640px;line-height:1.55;">Les entités publiques soumises au contrôle de l'IGF, réparties sur les 26 provinces de la RDC.</p>
+        </div>
+        <div style="display:flex;gap:26px;">
+          <div><div style="font-size:26px;font-weight:800;color:#0095C9;line-height:1;">{{total}}</div><div style="font-size:11.5px;color:#8A95A2;margin-top:3px;">entités affichées</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:#0B2942;line-height:1;">26</div><div style="font-size:11.5px;color:#8A95A2;margin-top:3px;">provinces</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP WORKSPACE -->
+  <section style="padding:24px 0 64px;">
+    <div style="max-width:1300px;margin:0 auto;padding:0 32px;">
+      <!-- FILTER CHIPS -->
+      <div style="display:flex;gap:9px;margin-bottom:18px;flex-wrap:wrap;">
+        <sc-for list="{{filters}}" as="f" hint-placeholder-count="5">
+          <span onClick="{{f.go}}" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:9px 15px;border-radius:30px;cursor:pointer;background:{{f.bg}};color:{{f.fg}};border:1px solid {{f.bd}};">
+            <span style="width:9px;height:9px;border-radius:50%;background:{{f.dot}};display:inline-block;"></span>{{f.label}} <span style="opacity:.6;">{{f.count}}</span>
+          </span>
+        </sc-for>
+      </div>
+
+      <div style="display:grid;grid-template-columns:340px 1fr;gap:22px;align-items:start;">
+        <!-- LEFT: detail + list -->
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <sc-if value="{{hasSelected}}" hint-placeholder-val="{{false}}">
+            <div style="background:#fff;border:1px solid #E4E8EE;border-radius:11px;overflow:hidden;box-shadow:0 6px 20px rgba(11,41,66,.08);">
+              <div style="height:5px;background:{{sel.color}};"></div>
+              <div style="padding:18px 20px;">
+                <div style="display:inline-flex;align-items:center;gap:7px;background:{{sel.tintBg}};color:{{sel.color}};font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;margin-bottom:11px;">{{sel.type}}</div>
+                <div style="font-size:17px;font-weight:700;color:#0B2942;line-height:1.3;margin-bottom:4px;">{{sel.name}}</div>
+                <div style="font-size:12.5px;color:#8A95A2;display:flex;align-items:center;gap:5px;margin-bottom:16px;"><span class="ms" style="font-size:15px;">location_on</span>{{sel.province}}</div>
+                <div style="display:flex;gap:0;border:1px solid #EEF1F5;border-radius:8px;overflow:hidden;">
+                  <div style="flex:1;padding:12px;text-align:center;border-right:1px solid #EEF1F5;"><div style="font-size:20px;font-weight:800;color:#0B2942;">{{sel.missions}}</div><div style="font-size:10.5px;color:#8A95A2;">missions</div></div>
+                  <div style="flex:1.4;padding:12px;text-align:center;"><div style="font-size:12px;font-weight:700;color:{{sel.statutColor}};margin-top:3px;">{{sel.statut}}</div><div style="font-size:10.5px;color:#8A95A2;">dernier contrôle</div></div>
+                </div>
+                <a class="lift" style="display:flex;align-items:center;justify-content:center;gap:7px;margin-top:14px;background:#0095C9;color:#fff;font-size:13px;font-weight:700;padding:11px;border-radius:6px;">Voir la fiche entité <span class="ms" style="font-size:17px;">arrow_forward</span></a>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{noSelected}}" hint-placeholder-val="{{true}}">
+            <div style="background:#F5F7FA;border:1px dashed #C8D2DC;border-radius:11px;padding:24px;text-align:center;">
+              <span class="ms" style="font-size:30px;color:#9AA6B2;">ads_click</span>
+              <div style="font-size:13.5px;font-weight:700;color:#5A6675;margin-top:8px;">Cliquez sur un point de la carte</div>
+              <div style="font-size:12px;color:#9AA6B2;margin-top:3px;">pour afficher le détail d'une entité.</div>
+            </div>
+          </sc-if>
+
+          <div style="background:#fff;border:1px solid #E4E8EE;border-radius:11px;overflow:hidden;">
+            <div style="padding:13px 18px;border-bottom:1px solid #EEF1F5;font-size:12px;font-weight:700;letter-spacing:.06em;color:#0B2942;">ENTITÉS ({{total}})</div>
+            <div style="max-height:360px;overflow:auto;">
+              <sc-for list="{{list}}" as="it" hint-placeholder-count="6">
+                <div onClick="{{it.go}}" style="display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid #F2F4F7;cursor:pointer;background:{{it.rowBg}};">
+                  <span style="width:10px;height:10px;border-radius:50%;background:{{it.color}};flex:none;"></span>
+                  <div style="flex:1;min-width:0;"><div style="font-size:13px;font-weight:700;color:#0B2942;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{it.name}}</div><div style="font-size:11px;color:#8A95A2;">{{it.province}}</div></div>
+                  <span class="ms" style="font-size:18px;color:#C4CDD6;">chevron_right</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: MAP -->
+        <div style="position:relative;height:600px;border-radius:14px;background:#0B2942;border:1px solid #0E2C46;overflow:hidden;">
+          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:46px 46px;"></div>
+          <div style="position:absolute;inset:0;background:radial-gradient(680px 460px at 60% 45%,rgba(0,149,201,.16),transparent 65%);"></div>
+          <span style="position:absolute;left:22px;top:18px;font-size:11.5px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.55);">RÉPUBLIQUE DÉMOCRATIQUE DU CONGO</span>
+          <span style="position:absolute;right:18px;bottom:14px;font-family:'Hanken Grotesk',monospace;font-size:10.5px;color:rgba(255,255,255,.4);">// fond cartographique — placeholder</span>
+
+          <sc-for list="{{pins}}" as="p" hint-placeholder-count="10">
+            <div onClick="{{p.go}}" class="pin" style="position:absolute;left:{{p.x}};top:{{p.y}};transform:translate(-50%,-50%);cursor:pointer;z-index:{{p.z}};">
+              <div style="width:{{p.size}};height:{{p.size}};border-radius:50%;background:{{p.color}};border:2px solid #0B2942;box-shadow:0 0 0 {{p.ring}} {{p.ringCol}};"></div>
+            </div>
+          </sc-for>
+
+          <!-- LEGEND -->
+          <div style="position:absolute;left:22px;bottom:18px;background:rgba(8,26,44,.72);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:13px 15px;backdrop-filter:blur(4px);">
+            <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.6);margin-bottom:9px;">LÉGENDE</div>
+            <div style="display:flex;flex-direction:column;gap:7px;">
+              <sc-for list="{{legend}}" as="l" hint-placeholder-count="4">
+                <div style="display:flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:50%;background:{{l.color}};"></span><span style="font-size:11.5px;color:rgba(255,255,255,.85);">{{l.label}}</span></div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0B2942;color:#fff;">
+    <div style="height:4px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+    <div style="max-width:1180px;margin:0 auto;padding:40px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;">
+      <img src="assets/igf-logo.png" alt="IGF" style="height:46px;width:auto;display:block;filter:brightness(0) invert(1);">
+      <span style="font-size:12px;color:rgba(255,255,255,.6);">© 2026 Inspection Générale des Finances — République Démocratique du Congo.</span>
+      <div style="width:30px;height:3px;background:linear-gradient(90deg,#0095C9 0 33.33%,#FFED00 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1300,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { filter:'Tous', selected:null, menu:null };
+  componentDidMount(){ this._doc=(e)=>{ if(!e.target.closest('[data-nav]')) this.setState({menu:null}); }; document.addEventListener('click',this._doc); }
+  componentWillUnmount(){ document.removeEventListener('click',this._doc); }
+  toggle(k){ this.setState(s=>({menu:s.menu===k?null:k})); }
+
+  renderVals(){
+    const typeColors = { 'Ministère':'#0095C9', 'Entreprise publique':'#D99000', 'Province & ETD':'#DB3832', 'Établissement public':'#2E8B6B' };
+    const typeTint = { 'Ministère':'#E7F4FA', 'Entreprise publique':'#FBF1DC', 'Province & ETD':'#FCEAE9', 'Établissement public':'#E3F2EC' };
+    const ents = [
+      {name:'Ministère des Finances', type:'Ministère', province:'Kinshasa', x:'19%', y:'59%', missions:12, statut:'Conforme'},
+      {name:'Ministère du Budget', type:'Ministère', province:'Kinshasa', x:'23%', y:'55%', missions:7, statut:'Conforme'},
+      {name:'Direction Générale des Impôts', type:'Entreprise publique', province:'Kinshasa', x:'15%', y:'63%', missions:9, statut:'En cours'},
+      {name:'Gécamines', type:'Entreprise publique', province:'Haut-Katanga', x:'64%', y:'82%', missions:14, statut:'Réserves'},
+      {name:'SNEL', type:'Entreprise publique', province:'Lualaba', x:'53%', y:'80%', missions:6, statut:'En cours'},
+      {name:'Régie des Voies Aériennes', type:'Établissement public', province:'Tshopo', x:'52%', y:'35%', missions:4, statut:'Conforme'},
+      {name:'Province du Nord-Kivu', type:'Province & ETD', province:'Nord-Kivu', x:'75%', y:'40%', missions:8, statut:'Réserves'},
+      {name:'Province du Sud-Kivu', type:'Province & ETD', province:'Sud-Kivu', x:'77%', y:'53%', missions:5, statut:'En cours'},
+      {name:'Province de l\u2019Ituri', type:'Province & ETD', province:'Ituri', x:'72%', y:'26%', missions:3, statut:'Conforme'},
+      {name:'Université de Kinshasa', type:'Établissement public', province:'Kinshasa', x:'21%', y:'64%', missions:2, statut:'Conforme'},
+      {name:'Régie des recettes — Kasaï', type:'Entreprise publique', province:'Kasaï', x:'41%', y:'66%', missions:5, statut:'Réserves'},
+      {name:'Province du Tanganyika', type:'Province & ETD', province:'Tanganyika', x:'66%', y:'66%', missions:4, statut:'En cours'},
+      {name:'Office des Routes — Équateur', type:'Établissement public', province:'Équateur', x:'34%', y:'31%', missions:3, statut:'Conforme'}
+    ];
+    const filters = ['Tous','Ministère','Entreprise publique','Province & ETD','Établissement public'];
+    const labelMap = {'Tous':'Toutes','Ministère':'Ministères','Entreprise publique':'Entreprises publiques','Province & ETD':'Provinces & ETD','Établissement public':'Établissements'};
+
+    const active = this.state.filter;
+    const shown = active==='Tous'?ents:ents.filter(e=>e.type===active);
+    const statutColor = (s)=> s==='Conforme'?'#0B7A3B':(s==='Réserves'?'#DB3832':'#D99000');
+
+    const filterChips = filters.map(f=>{
+      const cnt = f==='Tous'?ents.length:ents.filter(e=>e.type===f).length;
+      const on = active===f;
+      return { label:labelMap[f], count:cnt, go:()=>this.setState({filter:f, selected:null}),
+        bg:on?'#0B2942':'#fff', fg:on?'#fff':'#5A6675', bd:on?'#0B2942':'#E0E5EB',
+        dot:f==='Tous'?'#0B2942':typeColors[f] };
+    });
+
+    const ringTint = { 'Ministère':'rgba(0,149,201,.30)', 'Entreprise publique':'rgba(217,144,0,.30)', 'Province & ETD':'rgba(219,56,50,.30)', 'Établissement public':'rgba(46,139,107,.30)' };
+    const pins = shown.map((e)=>{
+      const isSel = this.state.selected===e.name;
+      return { x:e.x, y:e.y, color:typeColors[e.type], size:isSel?'20px':'15px',
+        ring:isSel?'7px':'5px', ringCol:isSel?'rgba(255,255,255,.40)':ringTint[e.type],
+        z:isSel?5:2, go:()=>this.setState({selected:e.name}) };
+    });
+
+    const list = shown.map(e=>({ name:e.name, province:e.province, color:typeColors[e.type],
+      rowBg:this.state.selected===e.name?'#F2FAFD':'#fff', go:()=>this.setState({selected:e.name}) }));
+
+    const selEnt = ents.find(e=>e.name===this.state.selected);
+    const sel = selEnt ? { ...selEnt, color:typeColors[selEnt.type], tintBg:typeTint[selEnt.type], statutColor:statutColor(selEnt.statut) } : null;
+
+    const legend = [
+      {label:'Ministères', color:'#0095C9'},
+      {label:'Entreprises publiques', color:'#D99000'},
+      {label:'Provinces & ETD', color:'#DB3832'},
+      {label:'Établissements publics', color:'#2E8B6B'}
+    ];
+
+    return {
+      igfOpen:this.state.menu==='igf', actOpen:this.state.menu==='act', pubOpen:this.state.menu==='pub',
+      onToggleIgf:(e)=>{e.stopPropagation();this.toggle('igf');}, onToggleAct:(e)=>{e.stopPropagation();this.toggle('act');}, onTogglePub:(e)=>{e.stopPropagation();this.toggle('pub');},
+      filters:filterChips, pins, list, legend,
+      total:shown.length,
+      hasSelected:!!sel, noSelected:!sel, sel
+    };
+  }
+}
+</script>
+</body>
+</html>
