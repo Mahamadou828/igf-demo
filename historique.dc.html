@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- ============================================================
+     DYNAMIC PAGE — Historique & structures
+     Regroupe les anciennes pages "Historique" et "Structuration"
+     en deux sections. Contenu destiné à être géré dynamiquement (CMS).
+     ============================================================ -->
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;color:#1A1A2E;background:#fff;}
+a{text-decoration:none;color:inherit;}
+.ms{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;display:inline-block;white-space:nowrap;}
+.lift{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;}
+.lift:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(5,39,96,.12);}
+</style>
+</helmet>
+
+<div data-screen-label="Historique et structures" style="font-family:'Hanken Grotesk',system-ui,sans-serif;color:#1A1A2E;background:#fff;min-height:100vh;">
+
+  <dc-import name="header" active="igf" hint-size="100%,130px"></dc-import>
+
+  <div style="background:#EFF1F4;">
+    <div style="max-width:1360px;margin:0 auto;padding:14px 24px 0;font-size:12.5px;color:#8A95A2;display:flex;align-items:center;gap:7px;">
+      <a href="accueil.dc.html" style="color:#0849B3;font-weight:600;">Accueil</a>
+      <span class="ms" style="font-size:15px;">chevron_right</span>
+      <span>L'IGF-RDC</span>
+      <span class="ms" style="font-size:15px;">chevron_right</span>
+      <span>Historique &amp; structures</span>
+    </div>
+  </div>
+
+  <section style="background:#EFF1F4;padding:36px 0 70px;">
+    <div style="max-width:1360px;margin:0 auto;padding:0 24px;">
+      <div style="background:#fff;border-radius:14px;padding:44px 48px 48px;">
+
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div style="width:26px;height:3px;background:#0849B3;border-radius:2px;"></div>
+          <span style="font-size:12px;letter-spacing:.18em;color:#0849B3;font-weight:700;">L'IGF-RDC</span>
+        </div>
+        <h1 style="font-size:32px;font-weight:700;color:#052760;margin:0 0 8px;letter-spacing:-.01em;">Historique &amp; structures</h1>
+        <p style="font-size:15px;color:#5A6675;margin:0 0 26px;max-width:660px;line-height:1.6;">Plus de cinquante ans d'histoire institutionnelle, et l'organisation actuelle de l'IGF.</p>
+
+        <div style="display:flex;gap:10px;margin-bottom:34px;">
+          <span onClick="{{goHist}}" style="font-size:13.5px;font-weight:700;padding:10px 24px;border-radius:30px;cursor:pointer;background:{{hBg}};color:{{hFg}};border:1px solid {{hBd}};">Historique</span>
+          <span onClick="{{goStruct}}" style="font-size:13.5px;font-weight:700;padding:10px 24px;border-radius:30px;cursor:pointer;background:{{sBg}};color:{{sFg}};border:1px solid {{sBd}};">Structures</span>
+        </div>
+
+        <!-- ===== HISTORIQUE ===== -->
+        <sc-if value="{{showHist}}" hint-placeholder-val="{{true}}">
+          <div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:34px;">
+              <sc-for list="{{eras}}" as="e" hint-placeholder-count="3">
+                <div class="lift" style="border:1px solid #EBEEF3;border-radius:10px;padding:26px;box-shadow:0 2px 10px rgba(5,39,96,.05);">
+                  <div style="font-size:26px;font-weight:800;color:#0849B3;line-height:1;margin-bottom:6px;">{{e.year}}</div>
+                  <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#8A95A2;margin-bottom:12px;">{{e.ref}}</div>
+                  <p style="font-size:13.5px;line-height:1.7;color:#3A4552;margin:0;">{{e.body}}</p>
+                </div>
+              </sc-for>
+            </div>
+
+            <h2 style="font-size:18px;font-weight:700;color:#052760;margin:0 0 6px;">Textes ultérieurs</h2>
+            <p style="font-size:14px;color:#5A6675;margin:0 0 16px;max-width:760px;line-height:1.6;">Plusieurs ordonnances et décrets sont ensuite intervenus pour modifier ou préciser les compétences de l'IGF en matière de contre-vérification, en modifier la tutelle, ou améliorer le statut des inspecteurs des finances. C'est ainsi que par :</p>
+            <div style="display:flex;flex-direction:column;gap:10px;max-width:860px;">
+              <sc-for list="{{textes}}" as="t" hint-placeholder-count="5">
+                <div style="border:1px solid #EBEEF3;border-radius:8px;overflow:hidden;">
+                  <div onClick="{{t.toggle}}" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:{{t.headBg}};color:{{t.headFg}};cursor:pointer;">
+                    <span class="ms" style="font-size:19px;">{{t.icon}}</span>
+                    <span style="font-size:14px;font-weight:700;">{{t.label}}</span>
+                  </div>
+                  <sc-if value="{{t.open}}" hint-placeholder-val="{{false}}">
+                    <div style="padding:16px 18px;font-size:14px;line-height:1.7;color:#3A4552;border-top:1px solid #EBEEF3;">{{t.body}}</div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- ===== STRUCTURES ===== -->
+        <sc-if value="{{showStruct}}" hint-placeholder-val="{{false}}">
+          <div>
+            <div style="position:relative;border-radius:12px;overflow:hidden;margin-bottom:34px;">
+              <img src="assets/photo-inauguration.png" alt="" style="width:100%;height:300px;object-fit:cover;display:block;">
+              <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,20,50,.82) 0%,rgba(5,39,96,.35) 60%,transparent 100%);"></div>
+              <div style="position:absolute;left:36px;top:50%;transform:translateY(-50%);max-width:420px;">
+                <span style="font-size:11.5px;letter-spacing:.18em;color:#F7D618;font-weight:700;">ORGANISATION</span>
+                <h2 style="font-size:23px;font-weight:700;color:#fff;margin:10px 0 0;">Les structures de l'Inspection Générale des Finances</h2>
+              </div>
+            </div>
+
+            <h2 style="font-size:18px;font-weight:700;color:#052760;margin:0 0 16px;">La Haute Direction</h2>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:34px;">
+              <sc-for list="{{direction}}" as="d" hint-placeholder-count="4">
+                <div class="lift" style="border:1px solid #EBEEF3;border-radius:10px;overflow:hidden;text-align:center;box-shadow:0 2px 10px rgba(5,39,96,.05);">
+                  <div style="height:170px;background:repeating-linear-gradient(135deg,#EDF0F5 0 14px,#E3E8F0 14px 28px);display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;">
+                    <span style="font-size:10px;color:#9AA6B2;">portrait officiel</span>
+                  </div>
+                  <div style="padding:16px 14px 18px;">
+                    <div style="font-size:14px;font-weight:700;color:#052760;line-height:1.35;">{{d.name}}</div>
+                    <div style="font-size:12px;color:#0849B3;font-weight:700;margin-top:5px;">{{d.role}}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+
+            <h2 style="font-size:18px;font-weight:700;color:#052760;margin:0 0 16px;">Les autres structures</h2>
+            <div style="display:flex;flex-direction:column;gap:10px;max-width:860px;">
+              <sc-for list="{{structures}}" as="t" hint-placeholder-count="3">
+                <div style="border:1px solid #EBEEF3;border-radius:8px;overflow:hidden;">
+                  <div onClick="{{t.toggle}}" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:{{t.headBg}};color:{{t.headFg}};cursor:pointer;">
+                    <span class="ms" style="font-size:19px;">{{t.icon}}</span>
+                    <span style="font-size:14px;font-weight:700;">{{t.label}}</span>
+                  </div>
+                  <sc-if value="{{t.open}}" hint-placeholder-val="{{false}}">
+                    <div style="padding:16px 18px;font-size:14px;line-height:1.7;color:#3A4552;border-top:1px solid #EBEEF3;">{{t.body}}</div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="footer" hint-size="100%,430px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { tab:'hist', open:{ t0:true } };
+
+  mk(defs, prefix){
+    return defs.map((d,i)=>{
+      const k = prefix+i;
+      const open = !!this.state.open[k];
+      return { ...d, open,
+        icon: open?'remove_circle':'add_circle',
+        headBg: open?'#0849B3':'#F5F6F8', headFg: open?'#fff':'#052760',
+        toggle: ()=>this.setState(s=>({open:{...s.open,[k]:!s.open[k]}})) };
+    });
+  }
+
+  renderVals(){
+    const tab = this.state.tab;
+    const eras = [
+      {year:'1968', ref:'ORDONNANCE-LOI N° 68-015', body:"Par l'Ordonnance-Loi n° 68-015 du 06 janvier 1968, il a été créé, au sein du Ministère des Finances, le Corps Spécial d'Inspecteurs des Finances, ayant pour mission de vérifier et contrôler toutes les recettes et toutes les dépenses qui ont une incidence dans le budget de l'État."},
+      {year:'1970', ref:'ORDONNANCE-LOI N° 70/093', body:"Le 23 décembre 1970, le Président de la République signe l'Ordonnance-Loi n° 70/093 portant statut des membres du Corps Spécial d'Inspecteurs des Finances, qui confie à l'Inspecteur des Finances les fonctions de Conseiller financier et budgétaire du Ministre auprès duquel il est accrédité, de contrôleur des dépenses engagées et de fonctionnaire de surveillance des opérations budgétaires et comptables."},
+      {year:'1987', ref:'ORDONNANCE-LOI N° 87-323', body:"L'Ordonnance-Loi n° 87-323 du 15 septembre 1987 institue l'Inspection Générale des Finances, service supérieur de contrôle des finances publiques placé sous l'autorité directe du Président de la République."}
+    ];
+    const textesDefs = [
+      {label:"L'Ordonnance-loi n° 91-005 du 06/03/91", body:"L'Ordonnance-loi n° 91-005 du 06/03/91 fait de l'Inspecteur des finances un justiciable à la Cour d'appel."},
+      {label:'Le Décret 034-b/2003 du 18/03/2003', body:"Le Décret 034-b/2003 précise les compétences de l'IGF en matière de contre-vérification fiscale et douanière."},
+      {label:'Le Décret n° 036-b/2003 du 24/03/2003', body:"Le Décret n° 036-b/2003 réorganise les services de l'IGF et actualise le cadre de ses interventions."},
+      {label:'Le Décret 04/018 du 19 février 2004', body:"Le Décret 04/018 modifie la tutelle de l'IGF et renforce son indépendance opérationnelle."},
+      {label:"L'Ordonnance n° 09/097 du 08 décembre 2009", body:"L'Ordonnance n° 09/097 améliore le statut des inspecteurs des finances et consolide le rattachement de l'IGF à la Présidence de la République."}
+    ];
+    const structuresDefs = [
+      {label:'Chefs des Brigades', body:"Les chefs des brigades dirigent les brigades spécialisées (coordination, finances publiques, entreprises publiques, régies financières, provinces et ETD) et supervisent l'exécution des missions qui leur sont confiées."},
+      {label:'Les Brigades', body:"Les brigades regroupent les inspecteurs des finances par domaine d'intervention. Des brigades mixtes et/ou ponctuelles peuvent être constituées pour des missions particulières."},
+      {label:"Les services d'appui", body:"Les services administratifs, financiers et techniques appuient les activités de contrôle : ressources humaines, logistique, systèmes d'information et communication."}
+    ];
+    const direction = [
+      {name:'Christophe BITASIMWA BAHII', role:'IGF/CS'},
+      {name:"Emmanuel TSHIBINGU N'SENGA", role:'IGF/CSA'},
+      {name:'Nicolas MUHIYA LUMBU', role:'IGF/COORDO'},
+      {name:'Rita MANDAMUNA MBOMA WOO', role:'IGF/COORDA'}
+    ];
+    const on = { bg:'#0849B3', fg:'#fff', bd:'#0849B3' }, off = { bg:'#fff', fg:'#5A6675', bd:'#E0E5EB' };
+    return {
+      showHist: tab==='hist', showStruct: tab==='struct',
+      goHist: ()=>this.setState({tab:'hist'}), goStruct: ()=>this.setState({tab:'struct'}),
+      hBg:(tab==='hist'?on:off).bg, hFg:(tab==='hist'?on:off).fg, hBd:(tab==='hist'?on:off).bd,
+      sBg:(tab==='struct'?on:off).bg, sFg:(tab==='struct'?on:off).fg, sBd:(tab==='struct'?on:off).bd,
+      eras, direction,
+      textes: this.mk(textesDefs,'t'),
+      structures: this.mk(structuresDefs,'s')
+    };
+  }
+}
+</script>
+</body>
+</html>

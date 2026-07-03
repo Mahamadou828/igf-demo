@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="support.js"></script>
+<script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -18,7 +18,7 @@ body{margin:0;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smo
 a{text-decoration:none;color:inherit;}
 .ms{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;display:inline-block;white-space:nowrap;}
 .lift{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;}
-.lift:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(10,44,107,.13);}
+.lift:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(5,39,96,.13);}
 .np::-webkit-input-placeholder{color:#9AA6B2;} .np::placeholder{color:#9AA6B2;}
 </style>
 </helmet>
@@ -27,33 +27,33 @@ a{text-decoration:none;color:inherit;}
 
   <!-- ================= HEADER ================= -->
   <header data-nav="1" style="position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 1px 0 #EEF1F5;">
-    <div style="height:6px;background:linear-gradient(90deg,#1B4DD2 0 34%,#F7D618 34% 67%,#E03C31 67% 100%);"></div>
+    <div style="height:6px;background:linear-gradient(90deg,#0849B3 0 34%,#F7D618 34% 67%,#E03C31 67% 100%);"></div>
     <div style="background:#F5F6F8;border-bottom:1px solid #E8ECF1;">
       <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 32px;max-width:1400px;margin:0 auto;">
         <div style="display:flex;align-items:center;gap:10px;">
-          <div style="width:21px;height:14px;border-radius:2px;background:linear-gradient(115deg,#2A6DF4 0 52%,#F7D618 52% 68%,#E03C31 68% 100%);flex:none;"></div>
-          <span style="font-size:11.5px;letter-spacing:.09em;color:#1B4DD2;font-weight:700;">RÉPUBLIQUE DÉMOCRATIQUE DU CONGO</span>
+          <div style="width:21px;height:14px;border-radius:2px;background:linear-gradient(115deg,#0849B3 0 52%,#F7D618 52% 68%,#E03C31 68% 100%);flex:none;"></div>
+          <span style="font-size:11.5px;letter-spacing:.09em;color:#0849B3;font-weight:700;">RÉPUBLIQUE DÉMOCRATIQUE DU CONGO</span>
         </div>
         <div style="display:flex;align-items:center;gap:22px;">
-          <a style="font-size:13px;font-weight:600;color:#1A1A2E;">Nous contacter</a>
+          <a href="contact.dc.html" style="font-size:13px;font-weight:600;color:#1A1A2E;">Nous contacter</a>
           <a style="font-size:13px;font-weight:600;color:#1A1A2E;">FAQ</a>
           <span class="ms" style="font-size:19px;color:#1A1A2E;cursor:pointer;">search</span>
-          <a style="background:#1B4DD2;color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:6px;">Portail Sécurisé</a>
+          <a style="background:#0849B3;color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:6px;">Portail Sécurisé</a>
         </div>
       </div>
     </div>
     <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:#fff;max-width:1400px;margin:0 auto;">
-      <a href="IGF Accueil.dc.html"><img src="assets/igf-logo.png" alt="Inspection Générale des Finances" style="height:54px;width:auto;display:block;"></a>
+      <a href="accueil.dc.html"><img src="assets/igf-logo.png" alt="Inspection Générale des Finances" style="height:54px;width:auto;display:block;"></a>
       <nav style="display:flex;align-items:center;gap:28px;font-size:15px;font-weight:600;color:#1A1A2E;position:relative;">
-        <a href="IGF Accueil.dc.html" style="color:#1B4DD2;font-weight:700;padding-bottom:3px;border-bottom:2px solid #1B4DD2;">Accueil</a>
+        <a href="accueil.dc.html" style="color:#0849B3;font-weight:700;padding-bottom:3px;border-bottom:2px solid #0849B3;">Accueil</a>
 
         <div style="position:relative;">
           <span onClick="{{onToggleIgf}}" style="cursor:pointer;">L'IGF-RDC</span>
           <sc-if value="{{igfOpen}}" hint-placeholder-val="{{false}}">
-            <div style="position:absolute;top:32px;left:-14px;width:260px;background:#fff;border:1px solid #E4E8EE;border-radius:6px;box-shadow:0 16px 40px rgba(10,44,107,.16);padding:8px;z-index:60;">
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Présentation de l'institution</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Missions &amp; attributions</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Organisation &amp; structures</a>
+            <div style="position:absolute;top:32px;left:-14px;width:260px;background:#fff;border:1px solid #E4E8EE;border-radius:6px;box-shadow:0 16px 40px rgba(5,39,96,.16);padding:8px;z-index:60;">
+              <a href="emploi.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Emploi</a>
+              <a href="missions.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Missions &amp; Attributions</a>
+              <a href="historique.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Historique &amp; structures</a>
               <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Le Chef de Service</a>
               <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Cadre légal &amp; réglementaire</a>
             </div>
@@ -63,92 +63,80 @@ a{text-decoration:none;color:inherit;}
         <div style="position:relative;">
           <span onClick="{{onToggleAct}}" style="cursor:pointer;">Actualités &amp; Médias</span>
           <sc-if value="{{actOpen}}" hint-placeholder-val="{{false}}">
-            <div style="position:absolute;top:32px;left:-14px;width:240px;background:#fff;border:1px solid #E4E8EE;border-radius:6px;box-shadow:0 16px 40px rgba(10,44,107,.16);padding:8px;z-index:60;">
-              <a href="IGF%20Actualites.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Toutes les actualités</a>
+            <div style="position:absolute;top:32px;left:-14px;width:240px;background:#fff;border:1px solid #E4E8EE;border-radius:6px;box-shadow:0 16px 40px rgba(5,39,96,.16);padding:8px;z-index:60;">
+              <a href="actualites.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Toutes les actualités</a>
               <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Communiqués officiels</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Médiathèque (vidéos)</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Photothèque</a>
+              <a href="mediatheque-videos.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Médiathèque (vidéos)</a>
+              <a href="mediatheque-photos.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Médiathèque (photos)</a>
             </div>
           </sc-if>
         </div>
 
-        <div style="position:relative;">
-          <span onClick="{{onTogglePub}}" style="cursor:pointer;">Publications</span>
-          <sc-if value="{{pubOpen}}" hint-placeholder-val="{{false}}">
-            <div style="position:absolute;top:32px;left:-14px;width:240px;background:#fff;border:1px solid #E4E8EE;border-radius:6px;box-shadow:0 16px 40px rgba(10,44,107,.16);padding:8px;z-index:60;">
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Rapports d'audit</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Études &amp; analyses</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Rapports d'activités</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Textes &amp; lois</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:14px;color:#1A1A2E;">Formulaires à télécharger</a>
-            </div>
-          </sc-if>
-        </div>
-
-        <a href="IGF%20Cartographie.dc.html">Cartographie</a>
-        <a href="IGF%20Signalement.dc.html">Signalement</a>
-        <a>Evénements</a>
-        <a>Contact</a>
+        <a href="rapports.dc.html">Rapports</a>
+        <a href="cartographie.dc.html">Cartographie</a>
+        <a href="signalement.dc.html">Signalement</a>
+        <a href="evenements.dc.html">Événements</a>
+        <a href="contact.dc.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- ================= HERO CAROUSEL ================= -->
-  <section style="position:relative;height:560px;background:#0A2C6B;overflow:hidden;">
+  <section style="position:relative;height:560px;background:#052760;overflow:hidden;">
     <sc-for list="{{slides}}" as="s" hint-placeholder-count="1">
       <div style="position:absolute;inset:0;opacity:{{s.op}};transition:opacity .7s ease;">
-        <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,#0E3A8C 0 26px,#0A2C6B 26px 52px);"></div>
-        <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,26,70,.96) 0%,rgba(7,32,84,.78) 45%,rgba(8,36,92,.25) 100%);"></div>
+        <img src="{{s.photo}}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;">
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,20,50,.93) 0%,rgba(5,39,96,.72) 48%,rgba(8,36,92,.18) 100%);"></div>
         <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:100%;max-width:1280px;padding:0 40px;">
           <div style="max-width:720px;">
             <div style="font-size:14px;letter-spacing:.14em;color:#fff;font-weight:700;margin-bottom:22px;">{{s.tag}}</div>
             <h1 style="font-size:52px;line-height:1.14;font-weight:700;color:#fff;margin:0 0 22px;letter-spacing:-.01em;">{{s.title}}</h1>
             <p style="font-size:16.5px;line-height:1.7;color:rgba(255,255,255,.92);margin:0 0 32px;max-width:600px;font-weight:600;">{{s.sub}}</p>
             <div style="display:flex;gap:16px;">
-              <a href="IGF%20Cartographie.dc.html" class="lift" style="display:inline-flex;align-items:center;background:#1B4DD2;color:#fff;font-size:15px;font-weight:700;padding:15px 30px;border-radius:4px;">Découvrir l'IGF</a>
-              <a href="IGF%20Actualites.dc.html" class="lift" style="display:inline-flex;align-items:center;color:#fff;font-size:15px;font-weight:700;padding:15px 28px;border-radius:4px;border:1.5px solid rgba(255,255,255,.75);">Nos actualités</a>
+              <a href="cartographie.dc.html" class="lift" style="display:inline-flex;align-items:center;background:#0849B3;color:#fff;font-size:15px;font-weight:700;padding:15px 30px;border-radius:4px;">Découvrir l'IGF</a>
+              <a href="actualites.dc.html" class="lift" style="display:inline-flex;align-items:center;color:#fff;font-size:15px;font-weight:700;padding:15px 28px;border-radius:4px;border:1.5px solid rgba(255,255,255,.75);">Nos actualités</a>
             </div>
           </div>
         </div>
       </div>
     </sc-for>
-    <div style="position:absolute;right:24px;bottom:14px;font-size:11px;letter-spacing:.04em;color:rgba(255,255,255,.4);z-index:4;">// photo institutionnelle — emplacement</div>
-    <div style="position:absolute;left:50%;transform:translateX(-50%);bottom:60px;display:flex;gap:9px;z-index:4;">
+
+    <div style="position:absolute;left:50%;transform:translateX(-50%);bottom:92px;display:flex;gap:9px;z-index:4;">
       <sc-for list="{{dots}}" as="d" hint-placeholder-count="4">
         <div onClick="{{d.go}}" style="width:22px;height:4px;border-radius:2px;background:{{d.bg}};cursor:pointer;transition:background .3s;"></div>
       </sc-for>
     </div>
-    <div onClick="{{onPrev}}" style="position:absolute;left:28px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:4;box-shadow:0 6px 18px rgba(0,0,0,.22);"><span class="ms" style="font-size:22px;color:#1B4DD2;">arrow_back</span></div>
-    <div onClick="{{onNext}}" style="position:absolute;right:28px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:4;box-shadow:0 6px 18px rgba(0,0,0,.22);"><span class="ms" style="font-size:22px;color:#1B4DD2;">arrow_forward</span></div>
+    <div onClick="{{onPrev}}" style="position:absolute;left:28px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:4;box-shadow:0 6px 18px rgba(0,0,0,.22);"><span class="ms" style="font-size:22px;color:#0849B3;">arrow_back</span></div>
+    <div onClick="{{onNext}}" style="position:absolute;right:28px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:4;box-shadow:0 6px 18px rgba(0,0,0,.22);"><span class="ms" style="font-size:22px;color:#0849B3;">arrow_forward</span></div>
   </section>
 
   <!-- ================= ACCÈS RAPIDES (floating card) ================= -->
   <section style="background:#fff;">
     <div style="max-width:1280px;margin:0 auto;padding:0 40px;">
-      <div style="background:#fff;border-radius:12px;box-shadow:0 18px 44px rgba(10,44,107,.12);transform:translateY(-64px);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;">
-        <a href="IGF%20Signalement.dc.html" style="padding:30px 28px;display:flex;flex-direction:column;border-right:1px solid #E8ECF1;">
-          <div style="width:52px;height:52px;border-radius:12px;background:#F3F7FF;border:1.5px solid #DCE6FA;display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><span class="ms" style="font-size:26px;color:#1B4DD2;">verified_user</span></div>
-          <div style="font-size:17px;font-weight:700;color:#0B1F4B;margin-bottom:8px;">Signaler / Dénoncer</div>
+      <div style="background:#fff;border-radius:12px;box-shadow:0 18px 44px rgba(5,39,96,.12);transform:translateY(-64px);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;">
+        <a href="signalement.dc.html" style="padding:30px 28px;display:flex;flex-direction:column;border-right:1px solid #E8ECF1;">
+          <div style="width:52px;height:52px;border-radius:12px;background:#F3F7FF;border:1.5px solid #DCE6FA;display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><span class="ms" style="font-size:26px;color:#0849B3;">verified_user</span></div>
+          <div style="font-size:17px;font-weight:700;color:#052760;margin-bottom:8px;">Signaler / Dénoncer</div>
           <div style="font-size:13.5px;color:#5A6675;line-height:1.55;">Transmettez un signalement en toute confidentialité.</div>
-          <span class="ms" style="font-size:20px;color:#1B4DD2;margin-top:18px;">arrow_right_alt</span>
+          <span class="ms" style="font-size:20px;color:#0849B3;margin-top:18px;">arrow_right_alt</span>
         </a>
-        <a href="IGF%20Signalement.dc.html" style="padding:30px 28px;display:flex;flex-direction:column;border-right:1px solid #E8ECF1;">
-          <div style="width:52px;height:52px;border-radius:12px;background:#F3F7FF;border:1.5px solid #DCE6FA;display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><span class="ms" style="font-size:26px;color:#1B4DD2;">edit_note</span></div>
-          <div style="font-size:17px;font-weight:700;color:#0B1F4B;margin-bottom:8px;">Demander une visite</div>
+        <a href="signalement.dc.html" style="padding:30px 28px;display:flex;flex-direction:column;border-right:1px solid #E8ECF1;">
+          <div style="width:52px;height:52px;border-radius:12px;background:#F3F7FF;border:1.5px solid #DCE6FA;display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><span class="ms" style="font-size:26px;color:#0849B3;">edit_note</span></div>
+          <div style="font-size:17px;font-weight:700;color:#052760;margin-bottom:8px;">Demander une visite</div>
           <div style="font-size:13.5px;color:#5A6675;line-height:1.55;">Sollicitez une mission de contrôle ou d'appui.</div>
-          <span class="ms" style="font-size:20px;color:#1B4DD2;margin-top:18px;">arrow_right_alt</span>
+          <span class="ms" style="font-size:20px;color:#0849B3;margin-top:18px;">arrow_right_alt</span>
         </a>
-        <a href="IGF%20Cartographie.dc.html" style="padding:30px 28px;display:flex;flex-direction:column;border-right:1px solid #E8ECF1;">
-          <div style="width:52px;height:52px;border-radius:12px;background:#F3F7FF;border:1.5px solid #DCE6FA;display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><span class="ms" style="font-size:26px;color:#1B4DD2;">map</span></div>
-          <div style="font-size:17px;font-weight:700;color:#0B1F4B;margin-bottom:8px;">Consulter la cartographie</div>
+        <a href="cartographie.dc.html" style="padding:30px 28px;display:flex;flex-direction:column;border-right:1px solid #E8ECF1;">
+          <div style="width:52px;height:52px;border-radius:12px;background:#F3F7FF;border:1.5px solid #DCE6FA;display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><span class="ms" style="font-size:26px;color:#0849B3;">map</span></div>
+          <div style="font-size:17px;font-weight:700;color:#052760;margin-bottom:8px;">Consulter la cartographie</div>
           <div style="font-size:13.5px;color:#5A6675;line-height:1.55;">Explorez les entités assujetties au contrôle de l'IGF.</div>
-          <span class="ms" style="font-size:20px;color:#1B4DD2;margin-top:18px;">arrow_right_alt</span>
+          <span class="ms" style="font-size:20px;color:#0849B3;margin-top:18px;">arrow_right_alt</span>
         </a>
         <a style="padding:30px 28px;display:flex;flex-direction:column;">
-          <div style="width:52px;height:52px;border-radius:12px;background:#F3F7FF;border:1.5px solid #DCE6FA;display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><span class="ms" style="font-size:26px;color:#1B4DD2;">description</span></div>
-          <div style="font-size:17px;font-weight:700;color:#0B1F4B;margin-bottom:8px;">Rapports &amp; publications</div>
+          <div style="width:52px;height:52px;border-radius:12px;background:#F3F7FF;border:1.5px solid #DCE6FA;display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><span class="ms" style="font-size:26px;color:#0849B3;">description</span></div>
+          <div style="font-size:17px;font-weight:700;color:#052760;margin-bottom:8px;">Rapports &amp; publications</div>
           <div style="font-size:13.5px;color:#5A6675;line-height:1.55;">Accédez aux audits, études et rapports d'activités.</div>
-          <span class="ms" style="font-size:20px;color:#1B4DD2;margin-top:18px;">arrow_right_alt</span>
+          <span class="ms" style="font-size:20px;color:#0849B3;margin-top:18px;">arrow_right_alt</span>
         </a>
       </div>
     </div>
@@ -159,27 +147,27 @@ a{text-decoration:none;color:inherit;}
     <div style="max-width:1360px;margin:0 auto;padding:0 24px;">
       <div style="background:#fff;border-radius:14px;padding:44px 48px 48px;">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-          <div style="width:26px;height:3px;background:#1B4DD2;border-radius:2px;"></div>
-          <span style="font-size:12px;letter-spacing:.18em;color:#1B4DD2;font-weight:700;">ACTUALITÉS</span>
+          <div style="width:26px;height:3px;background:#0849B3;border-radius:2px;"></div>
+          <span style="font-size:12px;letter-spacing:.18em;color:#0849B3;font-weight:700;">ACTUALITÉS</span>
         </div>
-        <h2 style="font-size:30px;font-weight:700;color:#0B1F4B;margin:0 0 24px;letter-spacing:-.01em;">Dernières actualités de l'IGF</h2>
+        <h2 style="font-size:30px;font-weight:700;color:#052760;margin:0 0 24px;letter-spacing:-.01em;">Dernières actualités de l'IGF</h2>
         <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap;">
           <div style="display:flex;gap:10px;flex-wrap:wrap;">
             <sc-for list="{{cats}}" as="c" hint-placeholder-count="5">
               <span onClick="{{c.go}}" style="font-size:13.5px;font-weight:600;padding:9px 20px;border-radius:30px;cursor:pointer;background:{{c.bg}};color:{{c.fg}};border:1px solid {{c.bd}};">{{c.label}}</span>
             </sc-for>
           </div>
-          <a href="IGF%20Actualites.dc.html" style="display:inline-flex;align-items:center;gap:8px;color:#1B4DD2;font-size:14.5px;font-weight:700;">Voir tout <span class="ms" style="font-size:19px;">arrow_right_alt</span></a>
+          <a href="actualites.dc.html" style="display:inline-flex;align-items:center;gap:8px;color:#0849B3;font-size:14.5px;font-weight:700;">Voir tout <span class="ms" style="font-size:19px;">arrow_right_alt</span></a>
         </div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
           <sc-for list="{{news}}" as="n" hint-placeholder-count="3">
-            <a href="IGF%20Actualites.dc.html" class="lift" style="background:#fff;border:1px solid #EBEEF3;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(10,44,107,.05);">
-              <div style="position:relative;height:190px;background:repeating-linear-gradient(135deg,#EEF1F5 0 15px,#E4E8EE 15px 30px);">
-                <span style="position:absolute;right:9px;bottom:8px;font-size:10px;color:#9AA6B2;">// {{n.img}}</span>
+            <a href="actualites.dc.html" class="lift" style="background:#fff;border:1px solid #EBEEF3;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(5,39,96,.05);">
+              <div style="position:relative;height:190px;overflow:hidden;">
+                <img src="{{n.photo}}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
               </div>
               <div style="padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;">
-                <span style="font-size:11.5px;font-weight:700;letter-spacing:.08em;color:#1B4DD2;margin-bottom:9px;">- {{n.cat}}</span>
-                <h3 style="font-size:17px;font-weight:700;color:#0B1F4B;line-height:1.35;margin:0 0 12px;">{{n.title}}</h3>
+                <span style="font-size:11.5px;font-weight:700;letter-spacing:.08em;color:#0849B3;margin-bottom:9px;">- {{n.cat}}</span>
+                <h3 style="font-size:17px;font-weight:700;color:#052760;line-height:1.35;margin:0 0 12px;">{{n.title}}</h3>
                 <span style="margin-top:auto;display:inline-flex;align-items:center;gap:7px;font-size:13px;color:#8A95A2;"><span class="ms" style="font-size:16px;">calendar_today</span>{{n.date}}</span>
               </div>
             </a>
@@ -190,9 +178,8 @@ a{text-decoration:none;color:inherit;}
   </section>
 
   <!-- ================= VÉRIFIER UN AGENT ================= -->
-  <section style="background:#0A2C6B;padding:64px 0;position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;background:radial-gradient(900px 500px at 20% 0%,rgba(42,109,244,.28),transparent 60%);"></div>
-    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:52px 52px;"></div>
+  <section style="background:#052760;padding:64px 0;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:#052760 url('assets/fond-lignes-band.png') center/cover no-repeat;"></div>
     <div style="max-width:1280px;margin:0 auto;padding:0 40px;position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;">
       <div>
         <div style="font-size:12.5px;letter-spacing:.22em;color:rgba(255,255,255,.92);font-weight:700;margin-bottom:16px;">VERIFICATION D'IDENTITE</div>
@@ -200,7 +187,7 @@ a{text-decoration:none;color:inherit;}
         <p style="font-size:15.5px;line-height:1.65;color:rgba(255,255,255,.95);margin:0 0 24px;max-width:520px;font-weight:600;">Un agent se présente à vous ? Saisissez son numéro de service pour confirmer son habilitation auprès de l'IGF.</p>
         <div style="display:flex;background:#fff;padding:6px;border-radius:6px;max-width:560px;box-shadow:0 14px 34px rgba(0,0,0,.22);">
           <input class="np" value="{{agentQ}}" onInput="{{onAgentInput}}" placeholder="Ex. IGF-2026-0375" style="flex:1;border:none;outline:none;font-size:15px;color:#1A1A2E;padding:0 14px;font-family:inherit;background:transparent;min-width:0;">
-          <button onClick="{{onSearchAgent}}" style="border:none;cursor:pointer;background:#1B4DD2;color:#fff;font-size:14.5px;font-weight:700;padding:14px 30px;border-radius:5px;font-family:inherit;">Vérifier</button>
+          <button onClick="{{onSearchAgent}}" style="border:none;cursor:pointer;background:#0849B3;color:#fff;font-size:14.5px;font-weight:700;padding:14px 30px;border-radius:5px;font-family:inherit;">Vérifier</button>
         </div>
         <div style="display:flex;gap:18px;margin-top:16px;font-size:14px;color:#fff;font-weight:700;">
           <span>Essayez&nbsp;:</span>
@@ -214,7 +201,7 @@ a{text-decoration:none;color:inherit;}
             <div style="width:74px;height:88px;border-radius:6px;background:repeating-linear-gradient(135deg,#EEF1F5 0 12px,#E4E8EE 12px 24px);flex:none;display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;"><span style="font-size:9px;color:#9AA6B2;">photo</span></div>
             <div style="flex:1;">
               <div style="display:inline-flex;align-items:center;gap:6px;background:{{agentRes.badgeBg}};color:{{agentRes.badgeFg}};font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;margin-bottom:9px;"><span class="ms" style="font-size:15px;">{{agentRes.icon}}</span>{{agentRes.status}}</div>
-              <div style="font-size:17px;font-weight:700;color:#0B1F4B;">{{agentRes.name}}</div>
+              <div style="font-size:17px;font-weight:700;color:#052760;">{{agentRes.name}}</div>
               <div style="font-size:13px;color:#5A6675;margin:2px 0 10px;">{{agentRes.role}}</div>
               <div style="display:flex;gap:22px;">
                 <div><div style="font-size:10px;letter-spacing:.08em;color:#9AA6B2;font-weight:700;">N° SERVICE</div><div style="font-size:13px;font-weight:700;color:#1A1A2E;">{{agentRes.num}}</div></div>
@@ -233,15 +220,15 @@ a{text-decoration:none;color:inherit;}
   <!-- ================= RÉSEAUX SOCIAUX ================= -->
   <section style="background:#fff;padding:60px 0;">
     <div style="max-width:1280px;margin:0 auto;padding:0 40px;text-align:center;">
-      <span style="font-size:12px;letter-spacing:.2em;color:#1B4DD2;font-weight:700;">RESTEZ CONNECTÉS</span>
-      <h2 style="font-size:28px;font-weight:700;color:#0B1F4B;margin:10px 0 34px;letter-spacing:-.01em;">Suivez l'IGF sur les réseaux sociaux</h2>
+      <span style="font-size:12px;letter-spacing:.2em;color:#0849B3;font-weight:700;">RESTEZ CONNECTÉS</span>
+      <h2 style="font-size:28px;font-weight:700;color:#052760;margin:10px 0 34px;letter-spacing:-.01em;">Suivez l'IGF sur les réseaux sociaux</h2>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:940px;margin:0 auto;">
         <sc-for list="{{socials}}" as="so" hint-placeholder-count="4">
           <a class="lift" style="background:#fff;border:1px solid #E8ECF1;border-radius:8px;padding:24px 20px;display:flex;flex-direction:column;align-items:center;">
             <div style="width:48px;height:48px;border-radius:12px;background:{{so.bg}};display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><span class="ms" style="font-size:25px;color:#fff;">{{so.icon}}</span></div>
-            <div style="font-size:15px;font-weight:700;color:#0B1F4B;">{{so.name}}</div>
+            <div style="font-size:15px;font-weight:700;color:#052760;">{{so.name}}</div>
             <div style="font-size:12px;color:#8A95A2;margin:1px 0 10px;">{{so.handle}}</div>
-            <div style="font-size:20px;font-weight:800;color:#1B4DD2;">{{so.count}}</div>
+            <div style="font-size:20px;font-weight:800;color:#0849B3;">{{so.count}}</div>
             <div style="font-size:11.5px;color:#8A95A2;">abonnés</div>
           </a>
         </sc-for>
@@ -250,7 +237,7 @@ a{text-decoration:none;color:inherit;}
   </section>
 
   <!-- ================= NEWSLETTER ================= -->
-  <section style="background:#1B4DD2;padding:52px 0;">
+  <section style="background:#0849B3;padding:52px 0;">
     <div style="max-width:1280px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;">
       <div>
         <h2 style="font-size:28px;font-weight:800;color:#fff;margin:0 0 12px;letter-spacing:.02em;">NOTRE NEWSLETTERS</h2>
@@ -260,7 +247,7 @@ a{text-decoration:none;color:inherit;}
         <sc-if value="{{nlNotSent}}" hint-placeholder-val="{{true}}">
           <div style="display:flex;gap:14px;align-items:center;">
             <input class="np" value="{{nlEmail}}" onInput="{{onNlInput}}" placeholder="Email" style="flex:1;border:1px solid rgba(255,255,255,.6);border-radius:5px;outline:none;font-size:15px;color:#fff;padding:16px 18px;font-family:inherit;background:transparent;min-width:0;">
-            <button onClick="{{onNlSubmit}}" style="border:none;cursor:pointer;background:#0A2C6B;color:#fff;font-size:14.5px;font-weight:700;padding:17px 30px;border-radius:5px;font-family:inherit;flex:none;">Soumettre</button>
+            <button onClick="{{onNlSubmit}}" style="border:none;cursor:pointer;background:#052760;color:#fff;font-size:14.5px;font-weight:700;padding:17px 30px;border-radius:5px;font-family:inherit;flex:none;">Soumettre</button>
           </div>
         </sc-if>
         <sc-if value="{{nlSent}}" hint-placeholder-val="{{false}}">
@@ -271,8 +258,8 @@ a{text-decoration:none;color:inherit;}
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer style="background:#0A2C6B;color:#fff;position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,24,64,.35),rgba(6,24,64,.75));"></div>
+  <footer style="background:#052760 url('assets/building-1.png') center/cover no-repeat;color:#fff;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,33,82,.92),rgba(3,20,50,.94));"></div>
     <div style="max-width:1280px;margin:0 auto;padding:52px 40px 36px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:44px;position:relative;">
       <div>
         <img src="assets/igf-logo.png" alt="IGF" style="height:56px;width:auto;display:block;filter:brightness(0) invert(1);margin-bottom:18px;">
@@ -281,7 +268,7 @@ a{text-decoration:none;color:inherit;}
       <div>
         <div style="font-size:13px;font-weight:700;letter-spacing:.08em;color:#fff;margin-bottom:16px;">ACCES RAPIDE</div>
         <div style="display:flex;flex-direction:column;gap:11px;font-size:13.5px;color:rgba(255,255,255,.85);">
-          <a href="IGF Accueil.dc.html">Accueil</a><a href="IGF%20Actualites.dc.html">Actualités &amp; Médias</a><a>Publications</a><a href="IGF%20Cartographie.dc.html">Cartographie</a><a href="IGF%20Signalement.dc.html">Signalement</a><a>Contact</a>
+          <a href="accueil.dc.html">Accueil</a><a href="actualites.dc.html">Actualités &amp; Médias</a><a href="rapports.dc.html">Rapports</a><a href="cartographie.dc.html">Cartographie</a><a href="signalement.dc.html">Signalement</a><a href="contact.dc.html">Contact</a>
         </div>
       </div>
       <div>
@@ -305,7 +292,7 @@ a{text-decoration:none;color:inherit;}
         <span style="font-size:12.5px;color:rgba(255,255,255,.8);">© 2026 Inspection Générale des Finances — République démocratique du Congo. Tous droits réservés.</span>
         <div style="display:flex;align-items:center;gap:20px;font-size:12.5px;color:rgba(255,255,255,.85);">
           <a>Mentions légales</a><a>Plan du site</a><a>Accessibilité</a>
-          <div style="width:34px;height:4px;border-radius:2px;background:linear-gradient(90deg,#2A6DF4 0 34%,#F7D618 34% 67%,#E03C31 67% 100%);"></div>
+          <div style="width:34px;height:4px;border-radius:2px;background:linear-gradient(90deg,#0849B3 0 34%,#F7D618 34% 67%,#E03C31 67% 100%);"></div>
         </div>
       </div>
     </div>
@@ -343,27 +330,27 @@ class Component extends DCLogic {
   renderVals(){
     const slide = this.state.slide;
     const slideData = [
-      {tag:'CONTROLE  •  INTEGRITE  •  PERFORMANCE', title:'Prévenir la corruption, protéger les deniers publics', sub:"L'IGF oeuvre pour un contrôle efficace des finances publiques, au service de la bonne gouvernance et du développement durable."},
-      {tag:'PLAN STRATÉGIQUE 2026–2028', title:'Au service de la transparence des finances publiques', sub:"L'Inspection Générale des Finances accompagne la modernisation de la gestion de l'État et le renforcement du contrôle systémique."},
-      {tag:'CONTRÔLE SYSTÉMIQUE', title:"D'un audit a posteriori vers la maîtrise des risques", sub:'Une nouvelle approche du contrôle des finances publiques, au plus près des entités assujetties.'},
-      {tag:'PROXIMITÉ', title:"L'IGF se déploie sur l'ensemble du territoire national", sub:"Des missions de contrôle et d'appui dans les 26 provinces de la République Démocratique du Congo."}
+      {tag:'CONTROLE  •  INTEGRITE  •  PERFORMANCE', title:'Prévenir la corruption, protéger les deniers publics', sub:"L'IGF oeuvre pour un contrôle efficace des finances publiques, au service de la bonne gouvernance et du développement durable.", photo:'assets/building-1.png'},
+      {tag:'PLAN STRATÉGIQUE 2026–2028', title:'Au service de la transparence des finances publiques', sub:"L'Inspection Générale des Finances accompagne la modernisation de la gestion de l'État et le renforcement du contrôle systémique.", photo:'assets/building-2.png'},
+      {tag:'CONTRÔLE SYSTÉMIQUE', title:"D'un audit a posteriori vers la maîtrise des risques", sub:'Une nouvelle approche du contrôle des finances publiques, au plus près des entités assujetties.', photo:'assets/photo-salle.png'},
+      {tag:'PROXIMITÉ', title:"L'IGF se déploie sur l'ensemble du territoire national", sub:"Des missions de contrôle et d'appui dans les 26 provinces de la République Démocratique du Congo.", photo:'assets/photo-inauguration.png'}
     ];
     const slides = slideData.map((s,i)=>({...s, op:i===slide?1:0}));
     const dots = [0,1,2,3].map(i=>({ bg:i===slide?'#7FB0FF':'rgba(255,255,255,.85)', go:()=>this.setState({slide:i}) }));
 
     const catList = ['Tous','Contrôle','Formation','Organisation','Partenariats'];
     const cats = catList.map(c=>({ label:c, go:()=>this.setState({cat:c}),
-      bg:this.state.cat===c?'#1B4DD2':'#fff', fg:this.state.cat===c?'#fff':'#5A6675', bd:this.state.cat===c?'#1B4DD2':'#E0E5EB' }));
+      bg:this.state.cat===c?'#0849B3':'#fff', fg:this.state.cat===c?'#fff':'#5A6675', bd:this.state.cat===c?'#0849B3':'#E0E5EB' }));
 
     const allNews = [
-      {cat:'CONTRÔLE', filt:'Contrôle', date:'12 mai 2024', title:"L'IGF renforce le contrôle des dépenses publiques", img:'séance de travail'},
-      {cat:'ORGANISATION', filt:'Organisation', date:'06 mai 2024', title:'Nouvelle stratégie 2024–2028 : cap sur l\u2019efficacité', img:'siège IGF'},
-      {cat:'FORMATION', filt:'Formation', date:'02 mai 2024', title:'Atelier de renforcement des capacités des Inspecteurs', img:'atelier'},
-      {cat:'CONTRÔLE', filt:'Contrôle', date:'26 avr. 2024', title:'Clôture de la première vague de missions de contrôle', img:'mission'},
-      {cat:'PARTENARIATS', filt:'Partenariats', date:'18 avr. 2024', title:"L'IGF installe l'Unité du COPIREP à Bukavu-Sud", img:'cérémonie'},
-      {cat:'FORMATION', filt:'Formation', date:'10 avr. 2024', title:'Première formation technique des nouveaux inspecteurs', img:'formation'},
-      {cat:'ORGANISATION', filt:'Organisation', date:'29 mars 2024', title:'Mise en place du Conseil de coordination des missions', img:'réunion'},
-      {cat:'PARTENARIATS', filt:'Partenariats', date:'02 avr. 2024', title:"Atelier de restitution avec l'Institut Gandois", img:'atelier'}
+      {cat:'CONTRÔLE', filt:'Contrôle', date:'12 mai 2024', title:"L'IGF renforce le contrôle des dépenses publiques", photo:'assets/photo-president.png'},
+      {cat:'ORGANISATION', filt:'Organisation', date:'06 mai 2024', title:'Nouvelle stratégie 2024–2028 : cap sur l\u2019efficacité', photo:'assets/building-2.png'},
+      {cat:'FORMATION', filt:'Formation', date:'02 mai 2024', title:'Atelier de renforcement des capacités des Inspecteurs', photo:'assets/photo-salle.png'},
+      {cat:'CONTRÔLE', filt:'Contrôle', date:'26 avr. 2024', title:'Clôture de la première vague de missions de contrôle', photo:'assets/photo-discours.png'},
+      {cat:'PARTENARIATS', filt:'Partenariats', date:'18 avr. 2024', title:"L'IGF installe l'Unité du COPIREP à Bukavu-Sud", photo:'assets/photo-inauguration.png'},
+      {cat:'FORMATION', filt:'Formation', date:'10 avr. 2024', title:'Première formation technique des nouveaux inspecteurs', photo:'assets/photo-embleme.png'},
+      {cat:'ORGANISATION', filt:'Organisation', date:'29 mars 2024', title:'Mise en place du Conseil de coordination des missions', photo:'assets/photo-salle.png'},
+      {cat:'PARTENARIATS', filt:'Partenariats', date:'02 avr. 2024', title:"Atelier de restitution avec l'Institut Gandois", photo:'assets/photo-foule.png'}
     ];
     const news = (this.state.cat==='Tous'?allNews:allNews.filter(n=>n.filt===this.state.cat)).slice(0,3);
 

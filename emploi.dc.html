@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;color:#1A1A2E;background:#fff;}
+a{text-decoration:none;color:inherit;}
+.ms{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;display:inline-block;white-space:nowrap;}
+.lift{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;}
+.lift:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(5,39,96,.13);}
+</style>
+</helmet>
+
+<div data-screen-label="Emploi" style="font-family:'Hanken Grotesk',system-ui,sans-serif;color:#1A1A2E;background:#fff;min-height:100vh;">
+
+  <dc-import name="header" active="igf" hint-size="100%,130px"></dc-import>
+
+  <div style="background:#EFF1F4;">
+    <div style="max-width:1360px;margin:0 auto;padding:14px 24px 0;font-size:12.5px;color:#8A95A2;display:flex;align-items:center;gap:7px;">
+      <a href="accueil.dc.html" style="color:#0849B3;font-weight:600;">Accueil</a>
+      <span class="ms" style="font-size:15px;">chevron_right</span>
+      <span>L'IGF-RDC</span>
+      <span class="ms" style="font-size:15px;">chevron_right</span>
+      <span>Emploi</span>
+    </div>
+  </div>
+
+  <section style="background:#EFF1F4;padding:36px 0 70px;">
+    <div style="max-width:1360px;margin:0 auto;padding:0 24px;">
+      <div style="background:#fff;border-radius:14px;padding:44px 48px 48px;">
+
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div style="width:26px;height:3px;background:#0849B3;border-radius:2px;"></div>
+          <span style="font-size:12px;letter-spacing:.18em;color:#0849B3;font-weight:700;">EMPLOI</span>
+        </div>
+        <h1 style="font-size:32px;font-weight:700;color:#052760;margin:0 0 8px;letter-spacing:-.01em;">Rejoindre l'IGF</h1>
+        <p style="font-size:15px;color:#5A6675;margin:0 0 30px;max-width:660px;line-height:1.6;">Les offres d'emploi et appels à candidatures de l'Inspection Générale des Finances.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <sc-for list="{{jobs}}" as="j" hint-placeholder-count="4">
+              <div class="lift" style="border:1px solid #EBEEF3;border-radius:10px;padding:24px 26px;display:flex;align-items:center;gap:22px;box-shadow:0 2px 10px rgba(5,39,96,.05);">
+                <div style="width:52px;height:52px;border-radius:12px;background:#F3F7FF;border:1.5px solid #DCE6FA;display:flex;align-items:center;justify-content:center;flex:none;"><span class="ms" style="font-size:25px;color:#0849B3;">{{j.icon}}</span></div>
+                <div style="flex:1;min-width:0;">
+                  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:5px;">
+                    <span style="font-size:16px;font-weight:700;color:#052760;">{{j.title}}</span>
+                    <span style="font-size:10.5px;font-weight:700;letter-spacing:.06em;color:#0849B3;background:#EAF0FC;padding:3px 9px;border-radius:3px;">{{j.type}}</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:16px;font-size:12.5px;color:#8A95A2;flex-wrap:wrap;">
+                    <span style="display:inline-flex;align-items:center;gap:5px;"><span class="ms" style="font-size:15px;">location_on</span>{{j.place}}</span>
+                    <span style="display:inline-flex;align-items:center;gap:5px;"><span class="ms" style="font-size:15px;">schedule</span>Clôture : {{j.deadline}}</span>
+                  </div>
+                </div>
+                <a class="lift" style="flex:none;display:inline-flex;align-items:center;gap:7px;background:#0849B3;color:#fff;font-size:13px;font-weight:700;padding:12px 22px;border-radius:5px;cursor:pointer;">Postuler <span class="ms" style="font-size:17px;">arrow_right_alt</span></a>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="background:#052760;border-radius:12px;padding:26px;position:relative;overflow:hidden;">
+              <div style="position:absolute;inset:0;background:url('assets/fond-lignes-band.png') center/cover no-repeat;opacity:.5;"></div>
+              <div style="position:relative;">
+                <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:10px;">Candidature spontanée</div>
+                <p style="font-size:13px;line-height:1.65;color:rgba(255,255,255,.9);margin:0 0 16px;">Aucune offre ne correspond à votre profil ? Adressez-nous votre dossier.</p>
+                <span style="display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#F7D618;"><span class="ms" style="font-size:17px;">mail</span>recrutement@igf.gouv.cd</span>
+              </div>
+            </div>
+            <div style="background:#fff;border:1px solid #EBEEF3;border-radius:12px;padding:24px;">
+              <div style="font-size:14px;font-weight:700;color:#052760;margin-bottom:12px;">Dossier de candidature</div>
+              <div style="display:flex;flex-direction:column;gap:9px;font-size:13px;color:#5A6675;line-height:1.5;">
+                <span style="display:flex;gap:9px;"><span class="ms" style="font-size:16px;color:#0849B3;">check_circle</span>Lettre de motivation adressée au Chef de Service</span>
+                <span style="display:flex;gap:9px;"><span class="ms" style="font-size:16px;color:#0849B3;">check_circle</span>Curriculum vitae détaillé et signé</span>
+                <span style="display:flex;gap:9px;"><span class="ms" style="font-size:16px;color:#0849B3;">check_circle</span>Copies certifiées des titres et diplômes</span>
+                <span style="display:flex;gap:9px;"><span class="ms" style="font-size:16px;color:#0849B3;">check_circle</span>Attestation d'aptitude physique</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="footer" hint-size="100%,430px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  renderVals(){
+    return { jobs: [
+      {icon:'fact_check', title:'Inspecteur des Finances (concours national)', type:'CONCOURS', place:'Kinshasa/Gombe', deadline:'31 août 2026'},
+      {icon:'analytics', title:'Auditeur interne junior', type:'CDI', place:'Kinshasa/Gombe', deadline:'24 juillet 2026'},
+      {icon:'computer', title:"Analyste des systèmes d'information", type:'CDI', place:'Kinshasa/Gombe', deadline:'15 juillet 2026'},
+      {icon:'campaign', title:'Chargé de communication institutionnelle', type:'CDD', place:'Kinshasa/Gombe', deadline:'10 juillet 2026'}
+    ]};
+  }
+}
+</script>
+</body>
+</html>

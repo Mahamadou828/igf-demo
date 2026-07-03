@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="support.js"></script>
+<script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -19,7 +19,7 @@ body{margin:0;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smo
 a{text-decoration:none;color:inherit;}
 .ms{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;display:inline-block;white-space:nowrap;}
 .lift{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;}
-.lift:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(10,44,107,.13);}
+.lift:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(5,39,96,.13);}
 .np::placeholder{color:#9AA6B2;}
 </style>
 </helmet>
@@ -28,67 +28,55 @@ a{text-decoration:none;color:inherit;}
 
   <!-- HEADER -->
   <header data-nav="1" style="position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 1px 0 #EEF1F5;">
-    <div style="height:6px;background:linear-gradient(90deg,#1B4DD2 0 34%,#F7D618 34% 67%,#E03C31 67% 100%);"></div>
+    <div style="height:6px;background:linear-gradient(90deg,#0849B3 0 34%,#F7D618 34% 67%,#E03C31 67% 100%);"></div>
     <div style="background:#F5F6F8;border-bottom:1px solid #E8ECF1;">
       <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 32px;max-width:1400px;margin:0 auto;">
         <div style="display:flex;align-items:center;gap:10px;">
-          <div style="width:21px;height:14px;border-radius:2px;background:linear-gradient(115deg,#2A6DF4 0 52%,#F7D618 52% 68%,#E03C31 68% 100%);flex:none;"></div>
-          <span style="font-size:11.5px;letter-spacing:.09em;color:#1B4DD2;font-weight:700;">RÉPUBLIQUE DÉMOCRATIQUE DU CONGO</span>
+          <div style="width:21px;height:14px;border-radius:2px;background:linear-gradient(115deg,#0849B3 0 52%,#F7D618 52% 68%,#E03C31 68% 100%);flex:none;"></div>
+          <span style="font-size:11.5px;letter-spacing:.09em;color:#0849B3;font-weight:700;">RÉPUBLIQUE DÉMOCRATIQUE DU CONGO</span>
         </div>
         <div style="display:flex;align-items:center;gap:22px;">
-          <a style="font-size:13px;font-weight:600;color:#1A1A2E;">Nous contacter</a>
+          <a href="contact.dc.html" style="font-size:13px;font-weight:600;color:#1A1A2E;">Nous contacter</a>
           <a style="font-size:13px;font-weight:600;color:#1A1A2E;">FAQ</a>
           <span class="ms" style="font-size:19px;color:#1A1A2E;cursor:pointer;">search</span>
-          <a style="background:#1B4DD2;color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:6px;">Portail Sécurisé</a>
+          <a style="background:#0849B3;color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:6px;">Portail Sécurisé</a>
         </div>
       </div>
     </div>
     <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 32px;background:#fff;max-width:1400px;margin:0 auto;">
-      <a href="IGF%20Accueil.dc.html"><img src="assets/igf-logo.png" alt="Inspection Générale des Finances" style="height:50px;width:auto;display:block;"></a>
+      <a href="accueil.dc.html"><img src="assets/igf-logo.png" alt="Inspection Générale des Finances" style="height:50px;width:auto;display:block;"></a>
       <nav style="display:flex;align-items:center;gap:20px;font-size:13.5px;font-weight:600;color:#1A1A2E;position:relative;">
-        <a href="IGF%20Accueil.dc.html">Accueil</a>
+        <a href="accueil.dc.html">Accueil</a>
         <div style="position:relative;">
           <span onClick="{{onToggleIgf}}" style="display:flex;align-items:center;gap:1px;cursor:pointer;">L'IGF-RDC</span>
           <sc-if value="{{igfOpen}}" hint-placeholder-val="{{false}}">
-            <div style="position:absolute;top:30px;left:-14px;width:260px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(10,44,107,.16);padding:8px;z-index:60;">
-              <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#1B4DD2 0 33.33%,#F7D618 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Présentation de l'institution</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Missions &amp; attributions</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Organisation &amp; structures</a>
+            <div style="position:absolute;top:30px;left:-14px;width:260px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(5,39,96,.16);padding:8px;z-index:60;">
+              <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#0849B3 0 33.33%,#F7D618 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+              <a href="emploi.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Emploi</a>
+              <a href="missions.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Missions &amp; Attributions</a>
+              <a href="historique.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Historique &amp; structures</a>
               <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Le Chef de Service</a>
               <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Cadre légal &amp; réglementaire</a>
             </div>
           </sc-if>
         </div>
         <div style="position:relative;">
-          <span onClick="{{onToggleAct}}" style="display:flex;align-items:center;gap:1px;cursor:pointer;color:#1B4DD2;">Actualités &amp; Médias</span>
+          <span onClick="{{onToggleAct}}" style="display:flex;align-items:center;gap:1px;cursor:pointer;color:#0849B3;">Actualités &amp; Médias</span>
           <sc-if value="{{actOpen}}" hint-placeholder-val="{{false}}">
-            <div style="position:absolute;top:30px;left:-14px;width:240px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(10,44,107,.16);padding:8px;z-index:60;">
-              <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#1B4DD2 0 33.33%,#F7D618 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
-              <a href="IGF Actualites.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Toutes les actualités</a>
+            <div style="position:absolute;top:30px;left:-14px;width:240px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(5,39,96,.16);padding:8px;z-index:60;">
+              <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#0849B3 0 33.33%,#F7D618 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+              <a href="actualites.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Toutes les actualités</a>
               <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Communiqués officiels</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Médiathèque (vidéos)</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Photothèque</a>
+              <a href="mediatheque-videos.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Médiathèque (vidéos)</a>
+              <a href="mediatheque-photos.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Médiathèque (photos)</a>
             </div>
           </sc-if>
         </div>
-        <div style="position:relative;">
-          <span onClick="{{onTogglePub}}" style="display:flex;align-items:center;gap:1px;cursor:pointer;">Publications</span>
-          <sc-if value="{{pubOpen}}" hint-placeholder-val="{{false}}">
-            <div style="position:absolute;top:30px;left:-14px;width:240px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(10,44,107,.16);padding:8px;z-index:60;">
-              <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#1B4DD2 0 33.33%,#F7D618 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Rapports d'audit</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Études &amp; analyses</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Rapports d'activités</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Textes &amp; lois</a>
-              <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;">Formulaires à télécharger</a>
-            </div>
-          </sc-if>
-        </div>
-        <a href="IGF%20Cartographie.dc.html">Cartographie</a>
-        <a href="IGF%20Signalement.dc.html">Signalement</a>
-        <a>Événements</a>
-        <a>Contact</a>
+        <a href="rapports.dc.html">Rapports</a>
+        <a href="cartographie.dc.html">Cartographie</a>
+        <a href="signalement.dc.html">Signalement</a>
+        <a href="evenements.dc.html">Événements</a>
+        <a href="contact.dc.html">Contact</a>
       </nav>
     </div>
   </header>
@@ -96,7 +84,7 @@ a{text-decoration:none;color:inherit;}
   <!-- BREADCRUMB -->
   <div style="background:#EFF1F4;">
     <div style="max-width:1360px;margin:0 auto;padding:14px 24px 0;font-size:12.5px;color:#8A95A2;display:flex;align-items:center;gap:7px;">
-      <a href="IGF%20Accueil.dc.html" style="color:#1B4DD2;font-weight:600;">Accueil</a>
+      <a href="accueil.dc.html" style="color:#0849B3;font-weight:600;">Accueil</a>
       <span class="ms" style="font-size:15px;">chevron_right</span>
       <span>Actualités &amp; Médias</span>
     </div>
@@ -108,10 +96,10 @@ a{text-decoration:none;color:inherit;}
       <div style="background:#fff;border-radius:14px;padding:44px 48px 48px;">
 
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-          <div style="width:26px;height:3px;background:#1B4DD2;border-radius:2px;"></div>
-          <span style="font-size:12px;letter-spacing:.18em;color:#1B4DD2;font-weight:700;">ACTUALITÉS &amp; MÉDIAS</span>
+          <div style="width:26px;height:3px;background:#0849B3;border-radius:2px;"></div>
+          <span style="font-size:12px;letter-spacing:.18em;color:#0849B3;font-weight:700;">ACTUALITÉS &amp; MÉDIAS</span>
         </div>
-        <h1 style="font-size:32px;font-weight:700;color:#0B1F4B;margin:0 0 8px;letter-spacing:-.01em;">Toute l'actualité de l'IGF</h1>
+        <h1 style="font-size:32px;font-weight:700;color:#052760;margin:0 0 8px;letter-spacing:-.01em;">Toute l'actualité de l'IGF</h1>
         <p style="font-size:15px;color:#5A6675;margin:0 0 28px;max-width:620px;line-height:1.6;">Communiqués, missions de contrôle, formations et vie de l'institution.</p>
 
         <div style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:26px;">
@@ -129,13 +117,13 @@ a{text-decoration:none;color:inherit;}
         <div style="font-size:12.5px;color:#8A95A2;margin-bottom:18px;">{{count}} résultat(s)</div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
           <sc-for list="{{articles}}" as="n" hint-placeholder-count="6">
-            <a class="lift" style="background:#fff;border:1px solid #EBEEF3;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(10,44,107,.05);">
-              <div style="position:relative;height:190px;background:repeating-linear-gradient(135deg,#EEF1F5 0 15px,#E4E8EE 15px 30px);">
-                <span style="position:absolute;right:9px;bottom:8px;font-size:10px;color:#9AA6B2;">// {{n.img}}</span>
+            <a class="lift" style="background:#fff;border:1px solid #EBEEF3;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(5,39,96,.05);">
+              <div style="position:relative;height:190px;overflow:hidden;">
+                <img src="{{n.photo}}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
               </div>
               <div style="padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;">
-                <span style="font-size:11.5px;font-weight:700;letter-spacing:.08em;color:#1B4DD2;margin-bottom:9px;text-transform:uppercase;">- {{n.cat}}</span>
-                <h3 style="font-size:17px;font-weight:700;color:#0B1F4B;line-height:1.35;margin:0 0 12px;">{{n.title}}</h3>
+                <span style="font-size:11.5px;font-weight:700;letter-spacing:.08em;color:#0849B3;margin-bottom:9px;text-transform:uppercase;">- {{n.cat}}</span>
+                <h3 style="font-size:17px;font-weight:700;color:#052760;line-height:1.35;margin:0 0 12px;">{{n.title}}</h3>
                 <span style="margin-top:auto;display:inline-flex;align-items:center;gap:7px;font-size:13px;color:#8A95A2;"><span class="ms" style="font-size:16px;">calendar_today</span>{{n.date}}</span>
               </div>
             </a>
@@ -147,11 +135,11 @@ a{text-decoration:none;color:inherit;}
         <!-- PAGINATION -->
         <sc-if value="{{showPager}}" hint-placeholder-val="{{true}}">
           <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:38px;">
-            <div onClick="{{onPrev}}" style="width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #E4E8EE;box-shadow:0 3px 10px rgba(10,44,107,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;"><span class="ms" style="font-size:19px;color:#1B4DD2;">arrow_back</span></div>
+            <div onClick="{{onPrev}}" style="width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #E4E8EE;box-shadow:0 3px 10px rgba(5,39,96,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;"><span class="ms" style="font-size:19px;color:#0849B3;">arrow_back</span></div>
             <sc-for list="{{pages}}" as="p" hint-placeholder-count="3">
               <div onClick="{{p.go}}" style="min-width:40px;height:40px;padding:0 6px;border-radius:50%;border:1px solid {{p.bd}};background:{{p.bg}};color:{{p.fg}};font-size:13.5px;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:pointer;">{{p.n}}</div>
             </sc-for>
-            <div onClick="{{onNext}}" style="width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #E4E8EE;box-shadow:0 3px 10px rgba(10,44,107,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;"><span class="ms" style="font-size:19px;color:#1B4DD2;">arrow_forward</span></div>
+            <div onClick="{{onNext}}" style="width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #E4E8EE;box-shadow:0 3px 10px rgba(5,39,96,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;"><span class="ms" style="font-size:19px;color:#0849B3;">arrow_forward</span></div>
           </div>
         </sc-if>
 
@@ -160,8 +148,8 @@ a{text-decoration:none;color:inherit;}
   </section>
 
   <!-- FOOTER -->
-  <footer style="background:#0A2C6B;color:#fff;position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,24,64,.35),rgba(6,24,64,.75));"></div>
+  <footer style="background:#052760 url('assets/building-1.png') center/cover no-repeat;color:#fff;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,33,82,.92),rgba(3,20,50,.94));"></div>
     <div style="max-width:1280px;margin:0 auto;padding:52px 40px 36px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:44px;position:relative;">
       <div>
         <img src="assets/igf-logo.png" alt="IGF" style="height:56px;width:auto;display:block;filter:brightness(0) invert(1);margin-bottom:18px;">
@@ -170,7 +158,7 @@ a{text-decoration:none;color:inherit;}
       <div>
         <div style="font-size:13px;font-weight:700;letter-spacing:.08em;color:#fff;margin-bottom:16px;">ACCES RAPIDE</div>
         <div style="display:flex;flex-direction:column;gap:11px;font-size:13.5px;color:rgba(255,255,255,.85);">
-          <a href="IGF%20Accueil.dc.html">Accueil</a><a href="IGF Actualites.dc.html">Actualités &amp; Médias</a><a>Publications</a><a href="IGF%20Cartographie.dc.html">Cartographie</a><a href="IGF%20Signalement.dc.html">Signalement</a><a>Contact</a>
+          <a href="accueil.dc.html">Accueil</a><a href="actualites.dc.html">Actualités &amp; Médias</a><a href="rapports.dc.html">Rapports</a><a href="cartographie.dc.html">Cartographie</a><a href="signalement.dc.html">Signalement</a><a href="contact.dc.html">Contact</a>
         </div>
       </div>
       <div>
@@ -193,7 +181,7 @@ a{text-decoration:none;color:inherit;}
         <span style="font-size:12.5px;color:rgba(255,255,255,.8);">© 2026 Inspection Générale des Finances — République démocratique du Congo. Tous droits réservés.</span>
         <div style="display:flex;align-items:center;gap:20px;font-size:12.5px;color:rgba(255,255,255,.85);">
           <a>Mentions légales</a><a>Plan du site</a><a>Accessibilité</a>
-          <div style="width:34px;height:4px;border-radius:2px;background:linear-gradient(90deg,#2A6DF4 0 34%,#F7D618 34% 67%,#E03C31 67% 100%);"></div>
+          <div style="width:34px;height:4px;border-radius:2px;background:linear-gradient(90deg,#0849B3 0 34%,#F7D618 34% 67%,#E03C31 67% 100%);"></div>
         </div>
       </div>
     </div>
@@ -229,9 +217,11 @@ class Component extends DCLogic {
       {cat:'Organisation', date:'18 févr. 2026', title:'Nouvelle organisation interne des brigades', excerpt:"Réorganisation pour gagner en réactivité sur le terrain.", img:'bureau'},
       {cat:'Formation', date:'09 févr. 2026', title:'Séminaire sur l\u2019audit fondé sur les risques', excerpt:'Montée en compétence des équipes de contrôle.', img:'séminaire'}
     ];
+    const photos = ['assets/photo-president.png','assets/building-2.png','assets/photo-salle.png','assets/photo-discours.png','assets/photo-inauguration.png','assets/photo-embleme.png','assets/photo-foule.png','assets/building-1.png'];
+    all.forEach((n,i)=>{ n.photo = photos[i%photos.length]; });
     const catList = ['Tous','Contrôle','Formation','Organisation','Partenariats'];
     const cats = catList.map(c=>({ label:c, go:()=>this.setState({cat:c,page:1}),
-      bg:this.state.cat===c?'#1B4DD2':'#fff', fg:this.state.cat===c?'#fff':'#5A6675', bd:this.state.cat===c?'#1B4DD2':'#E0E5EB' }));
+      bg:this.state.cat===c?'#0849B3':'#fff', fg:this.state.cat===c?'#fff':'#5A6675', bd:this.state.cat===c?'#0849B3':'#E0E5EB' }));
 
     const q = (this.state.q||'').toLowerCase();
     let filtered = all.filter(n=> (this.state.cat==='Tous'||n.cat===this.state.cat) && (q===''|| (n.title+n.excerpt).toLowerCase().includes(q)) );
@@ -240,7 +230,7 @@ class Component extends DCLogic {
     const page = Math.min(this.state.page, pageCount);
     const articles = filtered.slice((page-1)*perPage, page*perPage);
     const pages = Array.from({length:pageCount}, (_,i)=>i+1).map(n=>({ n, go:()=>this.setState({page:n}),
-      bg:n===page?'#1B4DD2':'#fff', fg:n===page?'#fff':'#5A6675', bd:n===page?'#1B4DD2':'#E4E8EE' }));
+      bg:n===page?'#0849B3':'#fff', fg:n===page?'#fff':'#5A6675', bd:n===page?'#0849B3':'#E4E8EE' }));
 
     return {
       igfOpen:this.state.menu==='igf', actOpen:this.state.menu==='act', pubOpen:this.state.menu==='pub',

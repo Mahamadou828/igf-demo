@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<style>
+.ms{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;display:inline-block;white-space:nowrap;}
+.lift{transition:transform .18s ease, box-shadow .18s ease, background .18s ease;}
+.lift:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(5,39,96,.12);}
+</style>
+</helmet>
+<header data-nav="1" style="position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 1px 0 #EEF1F5;font-family:'Hanken Grotesk',system-ui,sans-serif;">
+  <div style="height:6px;background:linear-gradient(90deg,#0849B3 0 34%,#F7D618 34% 67%,#E03C31 67% 100%);"></div>
+  <div style="background:#F5F6F8;border-bottom:1px solid #E8ECF1;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 32px;max-width:1400px;margin:0 auto;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:21px;height:14px;border-radius:2px;background:linear-gradient(115deg,#0849B3 0 52%,#F7D618 52% 68%,#E03C31 68% 100%);flex:none;"></div>
+        <span style="font-size:11.5px;letter-spacing:.09em;color:#0849B3;font-weight:700;">RÉPUBLIQUE DÉMOCRATIQUE DU CONGO</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:22px;">
+        <a href="contact.dc.html" style="font-size:13px;font-weight:600;color:#1A1A2E;text-decoration:none;">Nous contacter</a>
+        <a style="font-size:13px;font-weight:600;color:#1A1A2E;text-decoration:none;">FAQ</a>
+        <span class="ms" style="font-size:19px;color:#1A1A2E;cursor:pointer;">search</span>
+        <a style="background:#0849B3;color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:6px;text-decoration:none;">Portail Sécurisé</a>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 32px;background:#fff;max-width:1400px;margin:0 auto;">
+    <a href="accueil.dc.html"><img src="assets/igf-logo.png" alt="Inspection Générale des Finances" style="height:50px;width:auto;display:block;"></a>
+    <nav style="display:flex;align-items:center;gap:20px;font-size:13.5px;font-weight:600;color:#1A1A2E;position:relative;">
+      <a href="accueil.dc.html" style="text-decoration:none;color:{{cAccueil}};font-weight:{{wAccueil}};padding-bottom:3px;border-bottom:{{bAccueil}};">Accueil</a>
+
+      <div style="position:relative;">
+        <span onClick="{{onToggleIgf}}" style="cursor:pointer;color:{{cIgf}};font-weight:{{wIgf}};padding-bottom:3px;border-bottom:{{bIgf}};">L'IGF-RDC</span>
+        <sc-if value="{{igfOpen}}" hint-placeholder-val="{{false}}">
+          <div style="position:absolute;top:30px;left:-14px;width:270px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(5,39,96,.16);padding:8px;z-index:60;">
+            <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#0849B3 0 33.33%,#F7D618 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+            <a href="emploi.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;text-decoration:none;">Emploi</a>
+            <a href="missions.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;text-decoration:none;">Missions &amp; Attributions</a>
+            <a href="historique.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;text-decoration:none;">Historique &amp; structures</a>
+            <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;text-decoration:none;">Le Chef de Service</a>
+            <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;text-decoration:none;">Cadre légal &amp; réglementaire</a>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="position:relative;">
+        <span onClick="{{onToggleAct}}" style="cursor:pointer;color:{{cActu}};font-weight:{{wActu}};padding-bottom:3px;border-bottom:{{bActu}};">Actualités &amp; Médias</span>
+        <sc-if value="{{actOpen}}" hint-placeholder-val="{{false}}">
+          <div style="position:absolute;top:30px;left:-14px;width:250px;background:#fff;border:1px solid #E4E8EE;border-radius:5px;box-shadow:0 16px 40px rgba(5,39,96,.16);padding:8px;z-index:60;">
+            <div style="height:3px;border-radius:2px;margin:-8px -8px 8px;background:linear-gradient(90deg,#0849B3 0 33.33%,#F7D618 33.33% 66.66%,#DB3832 66.66% 100%);"></div>
+            <a href="actualites.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;text-decoration:none;">Toutes les actualités</a>
+            <a class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;text-decoration:none;">Communiqués officiels</a>
+            <a href="mediatheque-videos.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;text-decoration:none;">Médiathèque (vidéos)</a>
+            <a href="mediatheque-photos.dc.html" class="lift" style="display:block;padding:9px 11px;border-radius:4px;font-size:13.5px;color:#1A1A2E;text-decoration:none;">Médiathèque (photos)</a>
+          </div>
+        </sc-if>
+      </div>
+
+      <a href="rapports.dc.html" style="text-decoration:none;color:{{cRap}};font-weight:{{wRap}};padding-bottom:3px;border-bottom:{{bRap}};">Rapports</a>
+      <a href="cartographie.dc.html" style="text-decoration:none;color:{{cCarto}};font-weight:{{wCarto}};padding-bottom:3px;border-bottom:{{bCarto}};">Cartographie</a>
+      <a href="signalement.dc.html" style="text-decoration:none;color:{{cSig}};font-weight:{{wSig}};padding-bottom:3px;border-bottom:{{bSig}};">Signalement</a>
+      <a href="evenements.dc.html" style="text-decoration:none;color:{{cEve}};font-weight:{{wEve}};padding-bottom:3px;border-bottom:{{bEve}};">Événements</a>
+      <a href="contact.dc.html" style="text-decoration:none;color:{{cCon}};font-weight:{{wCon}};padding-bottom:3px;border-bottom:{{bCon}};">Contact</a>
+    </nav>
+  </div>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:140},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;&quot;,&quot;options&quot;:[&quot;&quot;,&quot;accueil&quot;,&quot;igf&quot;,&quot;actu&quot;,&quot;rapports&quot;,&quot;carto&quot;,&quot;signalement&quot;,&quot;evenements&quot;,&quot;contact&quot;],&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { menu:null };
+  componentDidMount(){
+    this._doc = (e)=>{ if(!e.target.closest('[data-nav]')) this.setState({menu:null}); };
+    document.addEventListener('click', this._doc);
+  }
+  componentWillUnmount(){ document.removeEventListener('click', this._doc); }
+  toggle(k){ this.setState(s=>({menu:s.menu===k?null:k})); }
+  renderVals(){
+    const a = this.props.active || '';
+    const keys = { accueil:'Accueil', igf:'Igf', actu:'Actu', rapports:'Rap', carto:'Carto', signalement:'Sig', evenements:'Eve', contact:'Con' };
+    const out = {};
+    Object.entries(keys).forEach(([k,K])=>{
+      const on = a===k;
+      out['c'+K] = on ? '#0849B3' : '#1A1A2E';
+      out['w'+K] = on ? '700' : '600';
+      out['b'+K] = on ? '2px solid #0849B3' : 'none';
+    });
+    return {
+      ...out,
+      igfOpen:this.state.menu==='igf', actOpen:this.state.menu==='act',
+      onToggleIgf:(e)=>{e.stopPropagation();this.toggle('igf');},
+      onToggleAct:(e)=>{e.stopPropagation();this.toggle('act');}
+    };
+  }
+}
+</script>
+</body>
+</html>

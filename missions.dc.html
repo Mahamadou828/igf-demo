@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- ============================================================
+     DYNAMIC PAGE — Missions & Attributions
+     Cette page regroupe les anciennes pages "Mission" et
+     "Attributions" en deux sections. Contenu destiné à être
+     géré dynamiquement (CMS).
+     ============================================================ -->
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;color:#1A1A2E;background:#fff;}
+a{text-decoration:none;color:inherit;}
+.ms{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;display:inline-block;white-space:nowrap;}
+.lift{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;}
+.lift:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(5,39,96,.12);}
+</style>
+</helmet>
+
+<div data-screen-label="Missions et Attributions" style="font-family:'Hanken Grotesk',system-ui,sans-serif;color:#1A1A2E;background:#fff;min-height:100vh;">
+
+  <dc-import name="header" active="igf" hint-size="100%,130px"></dc-import>
+
+  <div style="background:#EFF1F4;">
+    <div style="max-width:1360px;margin:0 auto;padding:14px 24px 0;font-size:12.5px;color:#8A95A2;display:flex;align-items:center;gap:7px;">
+      <a href="accueil.dc.html" style="color:#0849B3;font-weight:600;">Accueil</a>
+      <span class="ms" style="font-size:15px;">chevron_right</span>
+      <span>L'IGF-RDC</span>
+      <span class="ms" style="font-size:15px;">chevron_right</span>
+      <span>Missions &amp; Attributions</span>
+    </div>
+  </div>
+
+  <section style="background:#EFF1F4;padding:36px 0 70px;">
+    <div style="max-width:1360px;margin:0 auto;padding:0 24px;">
+      <div style="background:#fff;border-radius:14px;padding:44px 48px 48px;">
+
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div style="width:26px;height:3px;background:#0849B3;border-radius:2px;"></div>
+          <span style="font-size:12px;letter-spacing:.18em;color:#0849B3;font-weight:700;">L'IGF-RDC</span>
+        </div>
+        <h1 style="font-size:32px;font-weight:700;color:#052760;margin:0 0 8px;letter-spacing:-.01em;">Missions &amp; Attributions</h1>
+        <p style="font-size:15px;color:#5A6675;margin:0 0 26px;max-width:660px;line-height:1.6;">Le mandat de l'Inspection Générale des Finances et les attributions de ses organes.</p>
+
+        <!-- Section switcher -->
+        <div style="display:flex;gap:10px;margin-bottom:34px;">
+          <span onClick="{{goMission}}" style="font-size:13.5px;font-weight:700;padding:10px 24px;border-radius:30px;cursor:pointer;background:{{mBg}};color:{{mFg}};border:1px solid {{mBd}};">Notre mission</span>
+          <span onClick="{{goAttrib}}" style="font-size:13.5px;font-weight:700;padding:10px 24px;border-radius:30px;cursor:pointer;background:{{aBg}};color:{{aFg}};border:1px solid {{aBd}};">Attributions</span>
+        </div>
+
+        <!-- ===== SECTION MISSION ===== -->
+        <sc-if value="{{showMission}}" hint-placeholder-val="{{true}}">
+          <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:44px;align-items:start;">
+            <div style="position:relative;border-radius:12px;overflow:hidden;">
+              <img src="assets/photo-president.png" alt="" style="width:100%;height:380px;object-fit:cover;display:block;">
+              <div style="position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,#0849B3 0 34%,#F7D618 34% 67%,#E03C31 67% 100%);"></div>
+            </div>
+            <div>
+              <h2 style="font-size:23px;font-weight:700;color:#052760;margin:0 0 18px;">Nous avons pour mission</h2>
+              <div style="display:flex;flex-direction:column;gap:16px;font-size:14.5px;line-height:1.75;color:#3A4552;">
+                <p style="margin:0;">L'IGF vérifie et contrôle toutes les opérations financières de l'État, des entités administratives décentralisées, des établissements publics et organismes paraétatiques, ainsi que des organismes ou entreprises de toute nature bénéficiant du concours financier de l'État sous une forme de participation en capital, de subvention, de prêt, d'avance ou de garantie.</p>
+                <p style="margin:0;">En tant que service d'audit supérieur du gouvernement, elle peut procéder à toute mission de contre-vérification, au second degré, de toutes les situations douanières, fiscales ou parafiscales des contribuables ou redevables d'impôts, droits, taxes ou redevances — soit en cas de découverte d'une fraude lors d'une mission de contrôle, soit sur réquisition des autorités politiques, administratives ou judiciaires, soit sur dénonciation des tiers.</p>
+                <p style="margin:0;">Elle bénéficie également, en sus des crédits budgétaires lui alloués et émargeant aux budgets annexes de l'État, d'une quotité de 10&nbsp;% des pénalités recouvrées pour ses dépenses d'investissement.</p>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- ===== SECTION ATTRIBUTIONS ===== -->
+        <sc-if value="{{showAttrib}}" hint-placeholder-val="{{false}}">
+          <div style="max-width:900px;">
+
+            <h2 style="font-size:20px;font-weight:700;color:#052760;margin:0 0 6px;">L'Inspecteur Général des Finances — Chef de Service</h2>
+            <p style="font-size:14px;color:#5A6675;margin:0 0 16px;">À ce titre, il a notamment pour tâche de :</p>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:34px;">
+              <sc-for list="{{chefItems}}" as="it" hint-placeholder-count="4">
+                <div style="border:1px solid #EBEEF3;border-radius:8px;overflow:hidden;">
+                  <div onClick="{{it.toggle}}" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:{{it.headBg}};color:{{it.headFg}};cursor:pointer;">
+                    <span class="ms" style="font-size:19px;">{{it.icon}}</span>
+                    <span style="font-size:14px;font-weight:700;">{{it.label}}</span>
+                  </div>
+                  <sc-if value="{{it.open}}" hint-placeholder-val="{{false}}">
+                    <div style="padding:16px 18px;font-size:14px;line-height:1.7;color:#3A4552;border-top:1px solid #EBEEF3;">{{it.body}}</div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+
+            <h2 style="font-size:20px;font-weight:700;color:#052760;margin:0 0 6px;">L'Inspecteur Général des Finances — CCE Adjoint</h2>
+            <p style="font-size:14px;color:#3A4552;line-height:1.7;margin:0 0 34px;">Il assiste l'Inspecteur Général des Finances — Chef de Service dans l'exercice de l'ensemble de ses fonctions et le remplace en cas d'absence ou d'empêchement.</p>
+
+            <h2 style="font-size:20px;font-weight:700;color:#052760;margin:0 0 6px;">Les brigades</h2>
+            <p style="font-size:14px;color:#5A6675;margin:0 0 16px;">Sont chargées respectivement des attributions suivantes :</p>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+              <sc-for list="{{brigadeItems}}" as="it" hint-placeholder-count="5">
+                <div style="border:1px solid #EBEEF3;border-radius:8px;overflow:hidden;">
+                  <div onClick="{{it.toggle}}" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:{{it.headBg}};color:{{it.headFg}};cursor:pointer;">
+                    <span class="ms" style="font-size:19px;">{{it.icon}}</span>
+                    <span style="font-size:14px;font-weight:700;">{{it.label}}</span>
+                  </div>
+                  <sc-if value="{{it.open}}" hint-placeholder-val="{{false}}">
+                    <div style="padding:16px 18px;font-size:14px;line-height:1.7;color:#3A4552;border-top:1px solid #EBEEF3;">{{it.body}}</div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="background:#F5F6F8;border-radius:10px;padding:22px 26px;font-size:14px;line-height:1.75;color:#3A4552;">
+              <p style="margin:0 0 12px;">Les brigades mixtes et/ou ponctuelles sont chargées des missions particulières leur confiées.</p>
+              <p style="margin:0;">L'Inspection Générale des Finances accomplit toute autre enquête ou mission de contrôle, de vérification, de contre-vérification et de surveillance des régies financières de l'État et de tous autres services, organismes ou établissements publics de l'État, ordonnées soit sur instruction du Président de la République, soit sur réquisition des autorités politiques et administratives, soit sur réquisition des autorités judiciaires ou sur dénonciation des tiers.</p>
+            </div>
+
+          </div>
+        </sc-if>
+
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="footer" hint-size="100%,430px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { tab:'mission', open:{ c0:true, b0:true } };
+
+  mkItems(defs, prefix){
+    return defs.map((d,i)=>{
+      const k = prefix+i;
+      const open = !!this.state.open[k];
+      return { label:d.label, body:d.body, open,
+        icon: open?'remove_circle':'add_circle',
+        headBg: open?'#0849B3':'#F5F6F8', headFg: open?'#fff':'#052760',
+        toggle: ()=>this.setState(s=>({open:{...s.open,[k]:!s.open[k]}})) };
+    });
+  }
+
+  renderVals(){
+    const tab = this.state.tab;
+    const chefDefs = [
+      {label:'1 — Programme annuel d\u2019actions', body:"Préparer et soumettre à l'approbation du Président de la République le programme annuel d'actions de l'Inspection Générale des Finances ainsi que le programme des missions ponctuelles ;"},
+      {label:'2 — Coordination des missions', body:"Coordonner et superviser l'exécution des missions de contrôle, de vérification et de contre-vérification menées par les brigades et les inspecteurs des finances ;"},
+      {label:'3 — Représentation de l\u2019institution', body:"Représenter l'Inspection Générale des Finances auprès des institutions nationales et des partenaires internationaux, et rendre compte au Président de la République ;"},
+      {label:'4 — Discipline et déontologie', body:"Veiller au respect du statut des inspecteurs des finances et à l'application du code de déontologie au sein du service ;"}
+    ];
+    const brigadeDefs = [
+      {label:'1 — La brigade de coordination', body:"La brigade de coordination assure, sous l'autorité de l'Inspecteur Général des Finances — Chef de Service et de son adjoint, les fonctions d'animation et d'encadrement des services de l'Inspection Générale des Finances ;"},
+      {label:'2 — La brigade des finances publiques', body:"Elle contrôle l'exécution du budget de l'État, la comptabilité publique et la gestion de la trésorerie des administrations centrales ;"},
+      {label:'3 — La brigade des entreprises publiques', body:"Elle vérifie la gestion des entreprises du portefeuille de l'État et des établissements publics et organismes paraétatiques ;"},
+      {label:'4 — La brigade des régies financières', body:"Elle surveille les régies financières de l'État (impôts, douanes, recettes non fiscales) et procède aux contre-vérifications au second degré ;"},
+      {label:'5 — La brigade des provinces et ETD', body:"Elle contrôle la gestion financière des provinces et des entités territoriales décentralisées ;"}
+    ];
+    const on = { bg:'#0849B3', fg:'#fff', bd:'#0849B3' }, off = { bg:'#fff', fg:'#5A6675', bd:'#E0E5EB' };
+    return {
+      showMission: tab==='mission', showAttrib: tab==='attrib',
+      goMission: ()=>this.setState({tab:'mission'}), goAttrib: ()=>this.setState({tab:'attrib'}),
+      mBg:(tab==='mission'?on:off).bg, mFg:(tab==='mission'?on:off).fg, mBd:(tab==='mission'?on:off).bd,
+      aBg:(tab==='attrib'?on:off).bg, aFg:(tab==='attrib'?on:off).fg, aBd:(tab==='attrib'?on:off).bd,
+      chefItems: this.mkItems(chefDefs,'c'),
+      brigadeItems: this.mkItems(brigadeDefs,'b')
+    };
+  }
+}
+</script>
+</body>
+</html>
